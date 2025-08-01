@@ -3,13 +3,1060 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kutch Rentals - Our Fleet</title>
+    <title>Our Fleet - Kutch Car Rental</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/fleet.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reuse all the same CSS variables and base styles from the main page */
+        :root {
+            --primary-orange: #FF6B35;
+            --orange-dark: #E05A2B;
+            --orange-light: #FF8C5A;
+            --orange-pale: #FFF3EE;
+            --primary-blue: #2563EB;
+            --blue-dark: #1D4ED8;
+            --blue-light: #3B82F6;
+            --blue-pale: #EFF6FF;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --gray-light: #F1F5F9;
+            --gray-medium: #E2E8F0;
+            --gray-dark: #64748B;
+            --black: #0F172A;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--black);
+            background-color: var(--off-white);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Navigation - Same as index.html */
+        .navbar {
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--gray-medium);
+        }
+        
+        .navbar.scrolled {
+            padding: 12px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand span {
+            color: var(--primary-orange);
+        }
+        
+        .navbar-brand i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 8px 15px;
+            margin: 0 5px;
+            color: var(--black);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-orange);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 70%;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-blue);
+        }
+        
+        .btn-nav {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            border-radius: 30px;
+            padding: 8px 22px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            color: var(--white);
+        }
+        
+        /* Hero Section - Modified for Fleet Page */
+        .fleet-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .fleet-hero .hero-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .fleet-hero .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .breadcrumb {
+            justify-content: center;
+            background: transparent;
+            padding: 0;
+        }
+        
+        .breadcrumb-item a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--orange-light);
+        }
+        
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: var(--white);
+        }
+        
+        /* Fleet Categories */
+        .fleet-category {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .fleet-category:nth-child(odd) {
+            background-color: var(--white);
+        }
+        
+        .fleet-category:nth-child(even) {
+            background-color: var(--blue-pale);
+        }
+        
+        .category-title {
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .category-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            border-radius: 5px;
+        }
+        
+        /* Fleet Cards - Same as index.html */
+        .fleet-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-medium);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .fleet-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+            border-color: var(--primary-blue);
+        }
+        
+        .fleet-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--orange-dark) 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 3;
+        }
+        
+        .fleet-img {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .fleet-img:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(37, 99, 235, 0.3), transparent);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .fleet-card:hover .fleet-img:after {
+            opacity: 1;
+        }
+        
+        .fleet-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .fleet-card:hover .fleet-img img {
+            transform: scale(1.1);
+        }
+        
+        .fleet-body {
+            padding: 25px;
+        }
+        
+        .fleet-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+        
+        .fleet-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+        }
+        
+        .fleet-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .fleet-meta i {
+            margin-right: 5px;
+            color: var(--primary-blue);
+        }
+        
+        .fleet-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fleet-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray-dark);
+            margin-left: 5px;
+        }
+        
+        .btn-fleet {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-fleet:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(255, 107, 53, 0.9)), url('https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            position: relative;
+            text-align: center;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-cta:hover {
+            background-color: var(--blue-pale);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+            color: var(--primary-blue);
+        }
+        
+        /* Footer - Same as index.html */
+        .footer {
+            background: linear-gradient(135deg, var(--black) 0%, #111827 100%);
+            color: var(--white);
+            padding: 100px 0 30px;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .footer-logo span {
+            color: var(--primary-orange);
+        }
+        
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-icon:hover {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            border-radius: 3px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--primary-orange);
+            font-size: 0.8rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-blue);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.05rem;
+        }
+        
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--primary-orange);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+        }
+        
+        .footer-bottom a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--primary-blue);
+        }
+        
+        /* Newsletter */
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .newsletter-btn {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            opacity: 0.9;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1199px) {
+            .fleet-hero .hero-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .fleet-hero .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .fleet-hero {
+                height: 40vh;
+                min-height: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .fleet-hero .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .fleet-hero .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .fleet-hero {
+                height: 35vh;
+                min-height: 300px;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p><h1>Adding Soon...</h1></p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-car"></i>Kutch<span>Rentals</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Fleet
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#car-rental">Car Rental</a></li>
+                            <li><a class="dropdown-item" href="#new-urbania-force">New Urbania Force</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#tempo-traveller-10">10 Seater Tempo Traveller</a></li>
+                            <li><a class="dropdown-item" href="#tempo-traveller-12">12 Seater Tempo Traveller</a></li>
+                            <li><a class="dropdown-item" href="#tempo-traveller-14">14 Seater Tempo Traveller</a></li>
+                            <li><a class="dropdown-item" href="#tempo-traveller-17">17 Seater Tempo Traveller</a></li>
+                            <li><a class="dropdown-item" href="#tempo-traveller-20">20 Seater Tempo Traveller</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#mini-bus-25">25 Seater Mini Bus</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-nav" href="index.html#book-now">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="fleet-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="hero-title">Our Complete Fleet</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Our Fleet</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Rental Section -->
+    <section class="fleet-category" id="car-rental">
+        <div class="container">
+            <h2 class="category-title">Car Rental</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-badge">Most Popular</div>
+                        <div class="fleet-img">
+                            <img src="/kutch car rental/assets/css/image/car-dzire.jpg" alt="Economy Car">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">Swift Dzire</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 5 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹1500 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-img">
+                            <img src="/kutch car rental/assets/css/image/car-aura.jpg" alt="Sedan Car">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">Hyundai Aura</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 5 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel/Petrol</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹2500 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-badge">Family Choice</div>
+                        <div class="fleet-img">
+                            <img src="/kutch car rental/assets/css/image/xcent.png" alt="SUV Car">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">Hyundai Xcent</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 5 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel/Petrol</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹4000 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Urbania Force Section -->
+    <section class="fleet-category" id="new-urbania-force">
+        <div class="container">
+            <h2 class="category-title">New Urbania Force</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-img">
+                            <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="New Urbania Force">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">New Urbania Force</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 9 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹4500 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tempo Traveller Section -->
+    <section class="fleet-category" id="tempo-traveller-10">
+        <div class="container">
+            <h2 class="category-title">Tempo Traveller - 10 Seater</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-img">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="10 Seater Tempo Traveller">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">10 Seater Tempo Traveller</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 10 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹5000 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fleet-category" id="tempo-traveller-12">
+        <div class="container">
+            <h2 class="category-title">Tempo Traveller - 12 Seater</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-img">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="12 Seater Tempo Traveller">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">12 Seater Tempo Traveller</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 12 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹5500 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fleet-category" id="tempo-traveller-14">
+        <div class="container">
+            <h2 class="category-title">Tempo Traveller - 14 Seater</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-img">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="14 Seater Tempo Traveller">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">14 Seater Tempo Traveller</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 14 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹6000 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fleet-category" id="tempo-traveller-17">
+        <div class="container">
+            <h2 class="category-title">Tempo Traveller - 17 Seater</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-img">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="17 Seater Tempo Traveller">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">17 Seater Tempo Traveller</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 17 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹7000 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fleet-category" id="tempo-traveller-20">
+        <div class="container">
+            <h2 class="category-title">Tempo Traveller - 20 Seater</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-img">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="20 Seater Tempo Traveller">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">20 Seater Tempo Traveller</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 20 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹8000 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini Bus Section -->
+    <section class="fleet-category" id="mini-bus-25">
+        <div class="container">
+            <h2 class="category-title">25 Seater Mini Bus</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-img">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="25 Seater Mini Bus">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">25 Seater Mini Bus</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 25 Seats</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹10000 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Need Help Choosing the Right Vehicle?</h2>
+                <p class="cta-text">Our team is ready to help you select the perfect vehicle for your needs. Contact us today for personalized recommendations.</p>
+                <a href="index.html#contact" class="btn-cta">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo"><i class="fas fa-car"></i>Kutch<span>Rentals</span></a>
+                        <p>Providing premium car rental services in Kutch since 2010. We pride ourselves on exceptional customer service and a well-maintained fleet of vehicles.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="fleet.html"><i class="fas fa-chevron-right"></i> Our Fleet</a></li>
+                            <li><a href="index.html#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="index.html#reviews"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                            <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4 class="footer-title">Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Self Drive Rentals</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Chauffeur Services</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Airport Transfers</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Corporate Rentals</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Long Term Leasing</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Wedding Cars</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h4 class="footer-title">Contact Us</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Business Park, Bhuj, Kutch, Gujarat 370001</p>
+                        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@kutchrentals.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sun: 8:00 AM - 10:00 PM</p>
+                        
+                        <h4 class="footer-title mt-4">Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your Email">
+                            <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 <a href="#">Kutch Car Rentals</a>. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-orange);"></i> by Kutch Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without page reload
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        location.hash = targetId;
+                    }
+                }
+            });
+        });
+        
+        // Add animation to fleet cards when they come into view
+        const fleetCards = document.querySelectorAll('.fleet-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fleetCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
