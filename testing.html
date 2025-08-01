@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutch Car Rental | Dharmi Tourism - Bike, Car & Tour Packages</title>
+    <style>
+        :root {
+            --orange: #FF6B35;
+            --dark-orange: #E1561F;
+            --blue: #004E89;
+            --light-blue: #1A659E;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        .header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--orange);
+        }
+        
+        .logo span {
+            color: var(--blue);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 78, 137, 0.8), rgba(0, 78, 137, 0.8)), url('https://images.unsplash.com/photo-1564507004663-b6dfb3c824d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--orange);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-orange);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--orange);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-color: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 50px;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: var(--blue);
+            margin-top: 0;
+        }
+        
+        .inquiry-form {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        select.form-control {
+            height: 46px;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: var(--blue);
+            font-size: 32px;
+            margin-top: 0;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--orange);
+            margin-bottom: 20px;
+        }
+        
+        .feature-item h3 {
+            color: var(--blue);
+            margin-top: 0;
+        }
+        
+        .footer {
+            background-color: var(--blue);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--orange);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+        
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--orange);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Dharmi <span>Tourism</span></div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Bike Rental</a></li>
+                <li><a href="#">Self Drive Car</a></li>
+                <li><a href="#">Car Rental</a></li>
+                <li><a href="#">One Way Taxi</a></li>
+                <li><a href="#">Tempo Traveller</a></li>
+                <li><a href="#">Tourism</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Explore Kutch with Dharmi Tourism</h1>
+        <p>Choose Bike, Car or Self-Drive Car rental Service for a remarkable travel experience, with our diverse collection of vehicles that combine style, comfort, and security.</p>
+        <a href="#inquiry" class="btn">Book Now</a>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Bike Rental</h3>
+                        <p>Explore Kutch at your own pace with our well-maintained bikes. Perfect for adventurous travelers who want to discover hidden gems.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Self Drive Car</h3>
+                        <p>Enjoy the freedom of exploring Kutch with our self-drive car options. Choose from a variety of models to suit your needs.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-taxi"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Car Rental with Driver</h3>
+                        <p>Relax and enjoy the sights while our experienced drivers take you around Kutch's most beautiful locations.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section bg-light" id="inquiry">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quick Inquiry</h2>
+                <p>If you want to know more with your requirements. Fill up below details and get quick information.</p>
+            </div>
+            <div class="inquiry-form">
+                <form>
+                    <div class="form-group">
+                        <label for="service">I need a</label>
+                        <select class="form-control" id="service">
+                            <option>-- Select an option --</option>
+                            <option>Bike Rental</option>
+                            <option>Self Drive Car</option>
+                            <option>Car Rental with Driver</option>
+                            <option>One Way Taxi</option>
+                            <option>Tempo Traveller</option>
+                            <option>Tour Package</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="from-date">From Date</label>
+                        <input type="date" class="form-control" id="from-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Your Name*</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Contact Number*</label>
+                        <div style="display: flex;">
+                            <select class="form-control" style="width: 80px; margin-right: 10px;">
+                                <option>+91</option>
+                            </select>
+                            <input type="tel" class="form-control" id="phone" placeholder="81234 56789" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Dharmi Tourism - Your Travel Experts for Landmarks of Kutch, Gujarat</h2>
+                    <p>Our guided tours allow visitors to dive into the rich heritage of Kutch, Gujarat. The tours cover significant historical landmarks, including ancient forts, palaces, temples, and archaeological sites.</p>
+                    <p>Experienced guides provide information about the history, architecture, and cultural significance of Historical sites. Our tours offer an opportunity to immerse oneself in the rich culture and traditions of the region.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1582972236019-ea9e35f8b30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kutch Landscape">
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Well-Planned Tours</h3>
+                    <p>We design a well-planned tour that ensures the optimal exploration of the historical landmarks within Kutch.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Local Interactions</h3>
+                    <p>Our tours may include interactions with local communities, allowing visitors to gain a deeper understanding of the local way of life.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p>We prioritize the safety and security of our customers with well-maintained vehicles and professional drivers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Dharmi Tourism?</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1582972236019-ea9e35f8b30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kutch Culture">
+                </div>
+                <div class="about-text">
+                    <p><strong>Dharmi Tourism has all you need for your Kutch holiday.</strong></p>
+                    <ul>
+                        <li>A wide range of travel services, including car rentals, bike rentals, and tour packages, catering to different preferences and needs.</li>
+                        <li>Knowledgeable and experienced guides who can enhance your travel experience by providing insightful information about the Kutch attractions, culture, and history.</li>
+                        <li>Customized tour packages that allow you to explore the best of Kutch based on your interests and time availability.</li>
+                        <li>Flexibility and freedom to explore Kutch at your own pace, allowing you to create cherished memories.</li>
+                    </ul>
+                    <a href="#" class="btn">Explore Tour Packages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Places Time Table</a></li>
+                        <li><a href="#">Kutch Tour Package</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Bike Rental</a></li>
+                        <li><a href="#">Self Drive Car</a></li>
+                        <li><a href="#">Car Rental</a></li>
+                        <li><a href="#">One Way Taxi</a></li>
+                        <li><a href="#">Tempo Traveller</a></li>
+                        <li><a href="#">Tourism</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>8 - 1st floor . Pranav Complex,<br>Near Gayatri Mandir, Madhapar,<br>Ta. Bhuj-Kutch, Gujarat-370020</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+91 98796 00122<br>+91 82004 46114</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>dharmitourism@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Dharmi Tourism. All rights reserved. Designed & Developed by Opti Matrix</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
