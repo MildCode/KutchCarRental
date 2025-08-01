@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head content as your main page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Kutch Car Rental</title>
+    <title>Contact Us - Kutch Car Rental - Premium Car Hire Services</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -12,7 +11,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <style>
-        /* All the same root variables and base styles from your main page */
+        /* Reuse all the same CSS variables and base styles */
         :root {
             --primary-orange: #FF6B35;
             --orange-dark: #E05A2B;
@@ -43,7 +42,7 @@
             font-weight: 700;
         }
         
-        /* Navigation - same as main page */
+        /* Navigation - Same as other pages */
         .navbar {
             padding: 20px 0;
             transition: all 0.3s ease;
@@ -52,41 +51,119 @@
             border-bottom: 1px solid var(--gray-medium);
         }
         
-        /* All other same styles from your main page */
-        
-        /* Contact Page Specific Styles */
-        .contact-hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
-            color: var(--white);
-            padding: 120px 0 80px;
-            position: relative;
-            overflow: hidden;
+        .navbar.scrolled {
+            padding: 12px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
         }
         
-        .contact-hero:before {
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand span {
+            color: var(--primary-orange);
+        }
+        
+        .navbar-brand i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 8px 15px;
+            margin: 0 5px;
+            color: var(--black);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1483721310020-03333e577078?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80') center/cover no-repeat;
-            opacity: 0.1;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-orange);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
         
-        .contact-hero h1 {
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 70%;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-blue);
+        }
+        
+        .btn-nav {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            border-radius: 30px;
+            padding: 8px 22px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            color: var(--white);
+        }
+        
+        /* Contact Hero Section */
+        .contact-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .contact-hero .hero-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-hero .hero-title {
             font-size: 3.5rem;
             margin-bottom: 20px;
-            position: relative;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
-        .contact-hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
+        .breadcrumb {
+            justify-content: center;
+            background: transparent;
+            padding: 0;
         }
         
+        .breadcrumb-item a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--orange-light);
+        }
+        
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: var(--white);
+        }
+        
+        /* Contact Section */
         .contact-section {
             padding: 100px 0;
             position: relative;
@@ -95,161 +172,156 @@
         .contact-section:before {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
+            top: 0;
+            right: 0;
             width: 300px;
             height: 300px;
             background: radial-gradient(circle, var(--orange-light) 0%, rgba(255,140,90,0) 70%);
-            opacity: 0.1;
+            opacity: 0.3;
             border-radius: 50%;
-            z-index: -1;
         }
         
         .contact-section:after {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
+            bottom: -100px;
+            left: -100px;
             width: 400px;
             height: 400px;
             background: radial-gradient(circle, var(--blue-light) 0%, rgba(59,130,246,0) 70%);
-            opacity: 0.1;
+            opacity: 0.2;
             border-radius: 50%;
-            z-index: -1;
         }
         
-        .contact-container {
-            background-color: var(--white);
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
         }
         
-        .contact-info {
-            padding: 60px;
-            background-color: var(--blue-pale);
-            height: 100%;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 15px;
             position: relative;
+            display: inline-block;
         }
         
-        .contact-info h3:after {
+        .section-title h2:after {
             content: '';
             position: absolute;
-            left: 0;
+            left: 50%;
             bottom: -12px;
-            width: 50px;
-            height: 4px;
+            width: 80px;
+            height: 5px;
             background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
-            border-radius: 4px;
+            transform: translateX(-50%);
+            border-radius: 5px;
         }
         
-        .contact-details {
-            margin-bottom: 40px;
+        .section-title p {
+            color: var(--gray-dark);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
         }
         
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
+        /* Contact Cards */
+        .contact-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            height: 100%;
+            border: 1px solid var(--gray-medium);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
+            border-color: var(--primary-blue);
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
-            color: var(--white);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--blue-pale) 0%, var(--orange-pale) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            margin-right: 20px;
-            flex-shrink: 0;
+            margin: 0 auto 25px;
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            transition: all 0.3s ease;
         }
         
-        .contact-text h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+        .contact-card:hover .contact-icon {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+        }
+        
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--black);
         }
         
-        .contact-text p, .contact-text a {
+        .contact-card p {
             color: var(--gray-dark);
+            margin-bottom: 20px;
+        }
+        
+        .contact-link {
+            color: var(--primary-blue);
+            font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-        }
-        
-        .contact-text a:hover {
-            color: var(--primary-blue);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-link {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background-color: var(--white);
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            color: var(--primary-blue);
-            font-size: 1.2rem;
+        }
+        
+        .contact-link:hover {
+            color: var(--primary-orange);
+        }
+        
+        .contact-link i {
+            margin-left: 8px;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .social-link:hover {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
-            color: var(--white);
-            transform: translateY(-3px);
+        .contact-link:hover i {
+            transform: translateX(5px);
         }
         
+        /* Contact Form */
         .contact-form {
-            padding: 60px;
-        }
-        
-        .form-title {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .form-title:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -12px;
-            width: 50px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
-            border-radius: 4px;
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--gray-medium);
         }
         
         .form-control {
-            height: 55px;
+            height: 50px;
             border-radius: 8px;
             border: 1px solid var(--gray-medium);
+            padding: 10px 15px;
             margin-bottom: 20px;
-            font-size: 1rem;
-            padding: 15px;
+            transition: all 0.3s ease;
         }
         
         .form-control:focus {
             border-color: var(--primary-blue);
-            box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+            box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.1);
         }
         
         textarea.form-control {
-            height: 140px;
+            height: 150px;
             resize: none;
         }
         
@@ -257,27 +329,30 @@
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
             color: var(--white);
             border: none;
-            padding: 15px 30px;
-            font-weight: 600;
+            padding: 12px 30px;
             border-radius: 8px;
-            transition: all 0.3s ease;
+            font-weight: 600;
             font-size: 1.1rem;
-            margin-top: 10px;
+            transition: all 0.3s ease;
             width: 100%;
         }
         
         .btn-submit:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 0 0 100px;
         }
         
         .map-container {
-            height: 400px;
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-top: 80px;
             border: 1px solid var(--gray-medium);
+            height: 500px;
         }
         
         .map-container iframe {
@@ -286,43 +361,89 @@
             border: none;
         }
         
+        /* Business Hours */
+        .hours-section {
+            padding: 100px 0;
+            background-color: var(--blue-pale);
+        }
+        
+        .hours-table {
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hours-table tr {
+            border-bottom: 1px solid var(--gray-medium);
+        }
+        
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-table th,
+        .hours-table td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+        
+        .hours-table th {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .hours-table td {
+            color: var(--gray-dark);
+        }
+        
+        .hours-table tr:nth-child(even) {
+            background-color: var(--gray-light);
+        }
+        
+        .hours-table .closed {
+            color: var(--primary-orange);
+            font-weight: 600;
+        }
+        
         /* Responsive Design */
         @media (max-width: 992px) {
-            .contact-info, .contact-form {
-                padding: 40px;
+            .contact-hero .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
             }
         }
         
         @media (max-width: 768px) {
-            .contact-hero h1 {
-                font-size: 2.5rem;
+            .contact-hero .hero-title {
+                font-size: 2.4rem;
             }
             
-            .contact-info {
-                padding: 40px 30px;
+            .section-title h2 {
+                font-size: 2rem;
             }
             
             .contact-form {
-                padding: 40px 30px;
+                padding: 30px;
             }
         }
         
         @media (max-width: 576px) {
-            .contact-hero h1 {
+            .contact-hero .hero-title {
                 font-size: 2rem;
             }
             
-            .contact-hero p {
-                font-size: 1rem;
+            .section-title h2 {
+                font-size: 1.8rem;
             }
             
-            .contact-item {
-                flex-direction: column;
-            }
-            
-            .contact-icon {
-                margin-bottom: 15px;
-                margin-right: 0;
+            .contact-card {
+                padding: 30px;
             }
         }
     </style>
@@ -347,7 +468,7 @@
                         <a class="nav-link" href="index.html#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#about">About Us</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="contact.html">Contact</a>
@@ -360,125 +481,171 @@
         </div>
     </nav>
 
-    <!-- Contact Hero Section -->
-    <section class="contact-hero text-center">
-        <div class="container">
-            <h1>Get In Touch With Us</h1>
-            <p>Have questions about our car rental services? Our team is here to help you with any inquiries or special requests you might have.</p>
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="hero-title">Contact Kutch Rentals</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>We're here to help with any questions about our car rental services in Kutch</p>
+            </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact-container">
-                        <div class="row g-0">
-                            <div class="col-lg-5">
-                                <div class="contact-info">
-                                    <h3>Contact Information</h3>
-                                    <div class="contact-details">
-                                        <div class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-map-marker-alt"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <h4>Our Location</h4>
-                                                <p>123 Business Park, Bhuj, Kutch, Gujarat 370001</p>
-                                            </div>
-                                        </div>
-                                        <div class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-phone-alt"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <h4>Phone Number</h4>
-                                                <p><a href="tel:+919876543210">+91 98765 43210</a></p>
-                                                <p><a href="tel:+912832123456">+91 (02832) 123456</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-envelope"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <h4>Email Address</h4>
-                                                <p><a href="mailto:info@kutchrentals.com">info@kutchrentals.com</a></p>
-                                                <p><a href="mailto:support@kutchrentals.com">support@kutchrentals.com</a></p>
-                                            </div>
-                                        </div>
-                                        <div class="contact-item">
-                                            <div class="contact-icon">
-                                                <i class="fas fa-clock"></i>
-                                            </div>
-                                            <div class="contact-text">
-                                                <h4>Working Hours</h4>
-                                                <p>Monday - Sunday: 8:00 AM - 10:00 PM</p>
-                                                <p>24/7 for emergency roadside assistance</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h3>Follow Us</h3>
-                                    <div class="social-links">
-                                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7">
-                                <div class="contact-form">
-                                    <h3 class="form-title">Send Us a Message</h3>
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input type="text" class="form-control" placeholder="Your Name" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="email" class="form-control" placeholder="Your Email" required>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input type="tel" class="form-control" placeholder="Phone Number" required>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <select class="form-control" required>
-                                                    <option value="" selected disabled>Subject</option>
-                                                    <option>General Inquiry</option>
-                                                    <option>Booking Question</option>
-                                                    <option>Fleet Information</option>
-                                                    <option>Corporate Rental</option>
-                                                    <option>Feedback</option>
-                                                    <option>Other</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <textarea class="form-control" placeholder="Your Message" required></textarea>
-                                        <button type="submit" class="btn-submit">
-                                            <i class="fas fa-paper-plane me-2"></i> Send Message
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
+                        <h3>Our Location</h3>
+                        <p>123 Business Park, Bhuj, Kutch, Gujarat 370001, India</p>
+                        <a href="#map" class="contact-link">View on map <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117270.34403627913!2d69.7092553!3d23.2419998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3950c3c7d70b1a9f%3A0x5a0d9c82a0a4f1a5!2sBhuj%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Phone Numbers</h3>
+                        <p>Main: +91 98765 43210<br>Support: +91 98765 43211</p>
+                        <a href="tel:+919876543210" class="contact-link">Call us now <i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Address</h3>
+                        <p>Bookings: bookings@kutchrentals.com<br>Support: help@kutchrentals.com</p>
+                        <a href="mailto:bookings@kutchrentals.com" class="contact-link">Email us <i class="fas fa-paper-plane"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (same as your main page) -->
+    <!-- Contact Form Section -->
+    <section class="contact-section bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="section-title text-start">
+                        <h2>Send Us a Message</h2>
+                        <p class="text-start">Have questions about our services or need assistance with your booking? Fill out the form and our team will get back to you within 24 hours.</p>
+                    </div>
+                    <div class="mt-4">
+                        <h4>Emergency Support</h4>
+                        <p>For immediate assistance outside business hours, please call our 24/7 support line at <strong>+91 98765 43219</strong>.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-submit mt-3">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/place/Site,+B,+Katira+Commercial,+Office+Relocation+Site,+B%2F129,+RTO+Ring+Rd,+RTO+Relocation+Site,+Bhuj,+Gujarat+370001/@23.2386,69.6827,17z/data=!4m5!3m4!1s0x3950e1ef477b832d:0xe7c75e28dfa635c8!8m2!3d23.238626!4d69.682497?hl=en&entry=ttu&g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours Section -->
+    <section class="hours-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Business Hours</h2>
+                <p>Our customer service team is available to assist you during these hours</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <table class="hours-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Opening Hours</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td>8:00 AM - 10:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td>8:00 AM - 10:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td>8:00 AM - 10:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td>8:00 AM - 10:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td>8:00 AM - 10:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>9:00 AM - 8:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td class="closed">Closed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -501,8 +668,7 @@
                             <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
                             <li><a href="index.html#fleet"><i class="fas fa-chevron-right"></i> Our Fleet</a></li>
                             <li><a href="index.html#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                            <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                            <li><a href="index.html#reviews"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
                             <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                         </ul>
                     </div>
@@ -516,17 +682,16 @@
                             <li><a href="#"><i class="fas fa-chevron-right"></i> Airport Transfers</a></li>
                             <li><a href="#"><i class="fas fa-chevron-right"></i> Corporate Rentals</a></li>
                             <li><a href="#"><i class="fas fa-chevron-right"></i> Long Term Leasing</a></li>
-                            <li><a href="#"><i class="fas fa-chevron-right"></i> Wedding Cars</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-contact">
-                        <h4 class="footer-title">Contact Us</h4>
+                        <h4 class="footer-title">Contact Info</h4>
                         <p><i class="fas fa-map-marker-alt"></i> 123 Business Park, Bhuj, Kutch, Gujarat 370001</p>
                         <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
                         <p><i class="fas fa-envelope"></i> info@kutchrentals.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Sun: 8:00 AM - 10:00 PM</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 10:00 PM</p>
                         
                         <h4 class="footer-title mt-4">Newsletter</h4>
                         <form class="newsletter-form">
@@ -537,7 +702,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 <a href="index.html">Kutch Car Rentals</a>. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-orange);"></i> by Kutch Team</p>
+                <p>&copy; 2023 <a href="#">Kutch Car Rentals</a>. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-orange);"></i> by Kutch Team</p>
             </div>
         </div>
     </footer>
@@ -545,7 +710,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Navbar scroll effect (same as main page)
+        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -555,7 +720,14 @@
             }
         });
         
-        // Smooth scrolling for anchor links (same as main page)
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
