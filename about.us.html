@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Kutch Car Rental | Premium Vehicle Hire in Gujarat</title>
+    <meta name="description" content="Discover Kutch Car Rental's 23-year journey in providing premium vehicle hire services across Gujarat. Learn about our mission, fleet, and commitment to excellence.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b35;
+            --primary-dark: #e05a2b;
+            --secondary-color: #1e3c72;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #f1f1f1;
+            --section-padding: 100px 0;
+            --border-radius: 12px;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        /* Navbar Styles */
+        .navbar {
+            padding: 20px 0;
+            transition: all 0.4s ease;
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--white) !important;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .navbar.scrolled .navbar-brand {
+            color: var(--primary-color);
+        }
+        
+        .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            margin: 0 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled .nav-link {
+            color: var(--dark-color);
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .btn-nav {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-nav:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(30, 60, 114, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1583423230902-754c2b0c1cc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-breadcrumb {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .hero-breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .hero-breadcrumb a:hover {
+            color: var(--primary-color);
+            opacity: 1;
+        }
+        
+        .hero-breadcrumb .separator {
+            margin: 0 10px;
+            opacity: 0.6;
+        }
+        
+        .hero-breadcrumb .current {
+            color: var(--primary-color);
+            font-weight: 500;
+            opacity: 1;
+        }
+        
+        /* Section Common Styles */
+        .section {
+            padding: var(--section-padding);
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+            color: var(--dark-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            bottom: -15px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .section-title.center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 50px;
+            max-width: 700px;
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        /* About Journey Section */
+        .journey-section {
+            background-color: var(--white);
+            overflow: hidden;
+        }
+        
+        .journey-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .journey-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+        
+        .journey-text .highlight {
+            background-color: rgba(255, 107, 53, 0.1);
+            padding: 15px 20px;
+            border-left: 3px solid var(--primary-color);
+            margin: 25px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .journey-img {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+        
+        .journey-img img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.8s ease;
+        }
+        
+        .journey-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .journey-img .img-badge {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+        
+        .stat-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60px;
+            width: 1px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Strengths Section */
+        .strengths-section {
+            background-color: var(--light-gray);
+        }
+        
+        .strength-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            height: 100%;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .strength-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-bottom-color: var(--primary-color);
+        }
+        
+        .strength-icon {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            background-color: rgba(255, 107, 53, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        
+        .strength-card:hover .strength-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+        
+        .strength-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            background-color: var(--white);
+            background-image: url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .mission-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(30, 60, 114, 0.8) 100%);
+        }
+        
+        .mission-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .mission-section .section-title,
+        .mission-section .section-subtitle {
+            color: var(--white);
+        }
+        
+        .mission-section .section-title:after {
+            background-color: var(--primary-color);
+        }
+        
+        .mission-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-color);
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .mission-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        /* Team Section */
+        .team-section {
+            background-color: var(--light-gray);
+        }
+        
+        .team-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-img {
+            height: 280px;
+            overflow: hidden;
+        }
+        
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-card:hover .team-img img {
+            transform: scale(1.1);
+        }
+        
+        .team-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .team-info h4 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .team-info p {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            color: var(--dark-color);
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .team-social a:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 30px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .testimonial-card:before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+        }
+        
+        .rating {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-section:after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -50px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .cta-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-btn {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .cta-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--primary-color);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .cta-btn:hover {
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-btn:hover:before {
+            width: 100%;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: inline-block;
+            color: var(--white);
+        }
+        
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 25px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom p a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1199px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .journey-text {
+                padding-right: 30px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .journey-content {
+                flex-direction: column;
+            }
+            
+            .journey-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            
+            .about-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .stat-item:not(:last-child):after {
+                display: none;
+            }
+            
+            .stat-item {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero {
+                padding: 150px 0 80px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-title {
+                font-size: 2.2rem;
+            }
+            
+            .footer {
+                padding: 60px 0 20px;
+            }
+            
+            .footer-links {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-btn {
+                padding: 12px 30px;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://via.placeholder.com/40x40/1e3c72/ffffff?text=KCR" alt="Kutch Car Rental Logo">
+                Kutch Car Rental
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fleet.html">Our Fleet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="booking.html" class="btn btn-nav ms-lg-3">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Journey</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Discover the story behind Kutch Car Rental and our commitment to providing exceptional car rental services in the beautiful Kutch region.</p>
+            
+            <div class="hero-breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span class="current">About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Journey Section -->
+    <section class="section journey-section">
+        <div class="container">
+            <div class="journey-content">
+                <div class="journey-text" data-aos="fade-right">
+                    <h2 class="section-title">Our Story</h2>
+                    <p>Founded in 2000, Kutch Car Rental began as a small family-owned business with just 2 vehicles. What started as a modest operation to serve local tourists has now grown into Kutch's most trusted car rental service with a fleet of 20+ vehicles.</p>
+                    
+                    <div class="highlight" data-aos="zoom-in" data-aos-delay="200">
+                        <p>Our mission has always been simple: to provide reliable, affordable, and comfortable transportation solutions that help visitors explore the breathtaking beauty of Kutch with ease.</p>
+                    </div>
+                    
+                    <p>Over the past 23 years, we've had the privilege of serving thousands of satisfied customers, from solo travelers to large tour groups. Our deep understanding of the region's unique geography and travel requirements sets us apart.</p>
+                    <p>Whether you're here to experience the magical Rann Utsav, need transportation for corporate events, or want to explore Kutch's rich cultural heritage, we're committed to making your journey comfortable and memorable.</p>
+                    <a href="contact.html" class="btn btn-primary mt-3" data-aos="fade-up" data-aos-delay="300">Contact Us Now</a>
+                </div>
+                <div class="journey-img" data-aos="fade-left" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Kutch Car Rental Fleet">
+                    <div class="img-badge" data-aos="zoom-in" data-aos-delay="400">
+                        Since 2000
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up">
+                        <div class="stat-number">23+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Owned Vehicles</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Customer Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section class="section strengths-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title center" data-aos="fade-up">Why Choose Us</h2>
+                <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="100">What makes us the preferred choice for car rentals in Kutch</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="strength-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="strength-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="strength-title">23 Years of Excellence</h3>
+                        <p>With over two decades of industry experience and a fleet of 20+ owned vehicles, we deliver reliability and trust you can count on for your Kutch adventures.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="strength-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="strength-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="strength-title">Efficient and Reliable</h3>
+                        <p>Our services are quick and dependable. We understand the importance of being on time and offer seamless travel experiences with well-maintained vehicles.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="strength-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="strength-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="strength-title">24/7 Support</h3>
+                        <p>Our local team is available round the clock to assist you with any queries or concerns, ensuring you have a smooth journey at all times in Kutch.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="strength-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="strength-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="strength-title">Local Expertise</h3>
+                        <p>As Kutch natives, we provide valuable insights about the best routes, hidden gems, and must-visit locations to enhance your travel experience.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="strength-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="strength-icon">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <h3 class="strength-title">Diverse Fleet</h3>
+                        <p>From compact hatchbacks to luxurious SUVs and large tempo travelers, we have the perfect vehicle for every need and group size.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="strength-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="strength-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <h3 class="strength-title">Competitive Pricing</h3>
+                        <p>We offer transparent, competitive pricing with no hidden charges, ensuring you get the best value for your money.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section mission-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title center" data-aos="fade-up">Our Mission & Vision</h2>
+                <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="100">Guiding principles that drive our commitment to excellence</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="mission-card" data-aos="fade-right">
+                        <h3>Our Mission</h3>
+                        <p>To provide outstanding, high-quality car rental services that exceed customer expectations. We aim to ensure the best value for every trip while making each journey through Kutch comfortable, safe, and memorable for our customers. Our mission extends beyond transportation - we strive to be ambassadors of Kutch's rich culture and hospitality.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="mission-card" data-aos="fade-left">
+                        <h3>Our Vision</h3>
+                        <p>To be recognized as the leading provider of car rental services in Kutch and beyond, setting industry standards for reliability, customer service, and innovation. We envision expanding our services while maintaining our core values of integrity, community engagement, and environmental responsibility. Our goal is to become synonymous with exceptional travel experiences in Gujarat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title center" data-aos="fade-up">Meet Our Team</h2>
+                <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="100">The dedicated professionals behind Kutch Car Rental's success</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="team-card" data-aos="fade-up">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Rajesh Patel">
+                        </div>
+                        <div class="team-info">
+                            <h4>Rajesh Patel</h4>
+                            <p>Founder & CEO</p>
+                            <p class="small">With 25+ years in the transportation industry, Rajesh established Kutch Car Rental with a vision to provide reliable mobility solutions.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Priya Sharma">
+                        </div>
+                        <div class="team-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Operations Manager</p>
+                            <p class="small">Ensuring seamless operations, Priya brings 15 years of logistics expertise to manage our fleet and customer services.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Amit Joshi">
+                        </div>
+                        <div class="team-info">
+                            <h4>Amit Joshi</h4>
+                            <p>Head of Maintenance</p>
+                            <p class="small">Amit's mechanical expertise ensures our fleet remains in top condition, prioritizing your safety and comfort.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Neha Gupta">
+                        </div>
+                        <div class="team-info">
+                            <h4>Neha Gupta</h4>
+                            <p>Customer Relations</p>
+                            <p class="small">Neha's hospitality background ensures every customer receives personalized attention and care.</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title center" style="color: var(--white);" data-aos="fade-up">Customer Experiences</h2>
+                <p class="section-subtitle mx-auto" style="color: rgba(255,255,255,0.8);" data-aos="fade-up" data-aos-delay="100">Hear from our satisfied customers about their journeys with us</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Kutch Car Rental made our Rann Utsav trip unforgettable. The SUV we rented was spotless and perfectly maintained. Their team went above and beyond to ensure we visited all the best spots at the perfect times. Will definitely use them again!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma">
+                            </div>
+                            <div class="author-info">
+                                <h5>Priya Sharma</h5>
+                                <p>Traveler from Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"We booked a tempo traveler for our family reunion trip (12 people). The vehicle was spacious and comfortable for the long drives. The driver knew all the best routes and was extremely courteous. Excellent service from booking to drop-off!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Desai">
+                            </div>
+                            <div class="author-info">
+                                <h5>Rahul Desai</h5>
+                                <p>Family Vacation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"As a solo female traveler, safety was my top priority. Kutch Car Rental provided a reliable vehicle and excellent support throughout my 5-day trip. Their local knowledge helped me discover hidden gems I would have otherwise missed."</p>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ananya Patel">
+                            </div>
+                            <div class="author-info">
+                                <h5>Ananya Patel</h5>
+                                <p>Solo Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"We rented 4 cars for our corporate retreat in Kutch. The service was professional, vehicles were clean and well-maintained, and the pricing was transparent. Their team accommodated all our last-minute schedule changes without any issues."</p>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Vikram Mehta">
+                            </div>
+                            <div class="author-info">
+                                <h5>Vikram Mehta</h5>
+                                <p>Corporate Group</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title" data-aos="fade-up">Ready to Explore Kutch?</h2>
+            <p class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">Book your perfect vehicle today and experience the best car rental service in the region with our 23 years of trusted service.</p>
+            <a href="booking.html" class="btn cta-btn" data-aos="fade-up" data-aos-delay="200">Book Now <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo">Kutch Car Rental</a>
+                        <p>Providing premium car rental services in Kutch since 2000. We are committed to offering the best vehicles and customer service in the region, helping visitors explore Kutch's beauty with comfort and ease.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="fleet.html">Our Fleet</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="blog.html">Travel Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h3>Our Services</h3>
+                        <ul>
+                            <li><a href="services.html">Daily Rentals</a></li>
+                            <li><a href="services.html">Long Term Leasing</a></li>
+                            <li><a href="services.html">Airport Transfers</a></li>
+                            <li><a href="services.html">Corporate Services</a></li>
+                            <li><a href="services.html">Tour Packages</a></li>
+                            <li><a href="services.html">Wedding Transportation</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Business Avenue, Near Bhujiyo Dungar, Bhuj, Kutch, Gujarat 370001</p>
+                        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@kutchcarrental.com</p>
+                        <p><i class="fas fa-clock"></i> Open 24/7, 365 days</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kutch Car Rental. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+                <p class="mt-2">Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> by Kutch Web Solutions</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu when clicking a link
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+        
+        // Back to top button
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Preloader (optional)
+        window.addEventListener('load', function() {
+            const preloader = document.createElement('div');
+            preloader.style.position = 'fixed';
+            preloader.style.top = '0';
+            preloader.style.left = '0';
+            preloader.style.width = '100%';
+            preloader.style.height = '100%';
+            preloader.style.backgroundColor = '#fff';
+            preloader.style.display = 'flex';
+            preloader.style.justifyContent = 'center';
+            preloader.style.alignItems = 'center';
+            preloader.style.zIndex = '9999';
+            preloader.style.transition = 'opacity 0.5s ease';
+            
+            const spinner = document.createElement('div');
+            spinner.style.width = '50px';
+            spinner.style.height = '50px';
+            spinner.style.border = '5px solid #f3f3f3';
+            spinner.style.borderTop = '5px solid #ff6b35';
+            spinner.style.borderRadius = '50%';
+            spinner.style.animation = 'spin 1s linear infinite';
+            
+            preloader.appendChild(spinner);
+            document.body.appendChild(preloader);
+            
+            // Add spin animation
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            setTimeout(function() {
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.remove();
+                }, 500);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
