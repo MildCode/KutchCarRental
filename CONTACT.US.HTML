@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - [Your Company Name]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #075e54; /* WhatsApp green color */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .contact-card {
+            flex-basis: 30%;
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .whatsapp-card {
+            border-top: 4px solid #25D366; /* WhatsApp green */
+        }
+        .contact-card h3 {
+            color: #075e54;
+            margin-top: 0;
+        }
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+        .contact-form {
+            margin-top: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background-color: #075e54;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .contact-card {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you!</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="contact-methods">
+            <div class="contact-card whatsapp-card">
+                <h3>WhatsApp</h3>
+                <p>Chat with us instantly on WhatsApp. Our team typically responds within 1 business hour.</p>
+                <a href="https://wa.me/[YOUR_PHONE_NUMBER]" class="whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> Message Us on WhatsApp
+                </a>
+                <p><small>Replace [YOUR_PHONE_NUMBER] with your actual WhatsApp number including country code (e.g., 15551234567)</small></p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Email Us</h3>
+                <p>Send us an email and we'll get back to you as soon as possible.</p>
+                <p><strong>Email:</strong> contact@yourcompany.com</p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Call Us</h3>
+                <p>Available Monday-Friday, 9am-5pm.</p>
+                <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="/submit-form" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <!-- Font Awesome for WhatsApp icon (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</body>
+</html>
