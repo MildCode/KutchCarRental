@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Kutch Car Rental</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reuse all the same CSS variables and base styles from your existing design */
+        :root {
+            --primary-orange: #FF6B35;
+            --orange-dark: #E05A2B;
+            --orange-light: #FF8C5A;
+            --orange-pale: #FFF3EE;
+            --primary-blue: #2563EB;
+            --blue-dark: #1D4ED8;
+            --blue-light: #3B82F6;
+            --blue-pale: #EFF6FF;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --gray-light: #F1F5F9;
+            --gray-medium: #E2E8F0;
+            --gray-dark: #64748B;
+            --black: #0F172A;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--black);
+            background-color: var(--off-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation - Same as other pages */
+        .navbar {
+            padding: 20px 0;
+            transition: all 0.3s ease;
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .navbar.scrolled {
+            padding: 12px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand span {
+            color: var(--primary-orange);
+        }
+
+        .navbar-brand i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            padding: 8px 15px;
+            margin: 0 5px;
+            color: var(--black);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-orange);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 70%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-blue);
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            border-radius: 30px;
+            padding: 8px 22px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            color: var(--white);
+        }
+
+        /* Services Hero Section */
+        .services-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .services-hero .hero-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-hero .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .breadcrumb {
+            justify-content: center;
+            background: transparent;
+            padding: 0;
+        }
+
+        .breadcrumb-item a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: var(--orange-light);
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: var(--white);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .services-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--orange-light) 0%, rgba(255, 140, 90, 0) 70%);
+            opacity: 0.3;
+            border-radius: 50%;
+        }
+
+        .services-section:after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--blue-light) 0%, rgba(59, 130, 246, 0) 70%);
+            opacity: 0.2;
+            border-radius: 50%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -12px;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .section-title p {
+            color: var(--gray-dark);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            height: 100%;
+            border: 1px solid var(--gray-medium);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--blue-pale) 0%, var(--orange-pale) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .service-card p {
+            color: var(--gray-dark);
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .service-link:hover {
+            color: var(--primary-orange);
+        }
+
+        .service-link i {
+            margin-left: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Vehicle Type Section */
+        .vehicle-types {
+            padding: 80px 0;
+            background-color: var(--blue-pale);
+        }
+
+        .vehicle-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
+        }
+
+        .vehicle-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .vehicle-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .vehicle-card:hover .vehicle-img img {
+            transform: scale(1.05);
+        }
+
+        .vehicle-body {
+            padding: 25px;
+        }
+
+        .vehicle-body h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .vehicle-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .vehicle-features li {
+            margin-bottom: 8px;
+            color: var(--gray-dark);
+            display: flex;
+            align-items: center;
+        }
+
+        .vehicle-features i {
+            color: var(--primary-orange);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+
+        .vehicle-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .vehicle-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray-dark);
+        }
+
+        .btn-vehicle {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-vehicle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 100px 0;
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--blue-pale) 0%, var(--orange-pale) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover .feature-icon {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .feature-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .feature-box p {
+            color: var(--gray-dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta-section:after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            color: var(--primary-blue);
+        }
+
+        /* Footer - Same as other pages */
+        .footer {
+            background: linear-gradient(135deg, var(--black) 0%, #111827 100%);
+            color: var(--white);
+            padding: 100px 0 30px;
+            position: relative;
+        }
+
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-logo span {
+            color: var(--primary-orange);
+        }
+
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--primary-blue);
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--primary-orange);
+            font-size: 0.8rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.05rem;
+        }
+
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--primary-orange);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Newsletter */
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-btn {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1199px) {
+            .services-hero .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .services-hero .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .services-hero {
+                height: 40vh;
+                min-height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-hero .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .services-hero {
+                height: 35vh;
+                min-height: 300px;
+            }
+
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-car"></i>Kutch<span>Rentals</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#fleet">Our Fleet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-nav" href="index.html#book-now">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="hero-title">Our Premium Services</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Our Services</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Comprehensive Car Rental Solutions</h2>
+                <p>Discover our wide range of premium services tailored to meet all your transportation needs in Kutch</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-car-alt"></i>
+                        </div>
+                        <h3>Self-Drive Rentals</h3>
+                        <p>Enjoy the freedom of exploring Kutch at your own pace with our well-maintained fleet of self-drive cars available for hourly, daily, weekly, and monthly rentals.</p>
+                        <a href="#self-drive" class="service-link">Explore options <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Chauffeur Services</h3>
+                        <p>Relax and let our professional drivers take you around Kutch in comfort and style. Perfect for business travelers and tourists alike.</p>
+                        <a href="#chauffeur" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <h3>Airport Transfers</h3>
+                        <p>Hassle-free airport pickups and drop-offs to/from Bhuj Airport with flight tracking and meet & greet service available.</p>
+                        <a href="#airport" class="service-link">View details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Corporate Rentals</h3>
+                        <p>Special packages for businesses with monthly billing, multiple vehicle discounts, and priority support for your corporate transportation needs.</p>
+                        <a href="#corporate" class="service-link">Business solutions <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3>Outstation Trips</h3>
+                        <p>Explore beyond Kutch with our reliable vehicles and unlimited kilometer packages for memorable road trips across Gujarat.</p>
+                        <a href="#outstation" class="service-link">Plan your trip <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Long Term Leasing</h3>
+                        <p>Flexible long-term rental solutions with comprehensive maintenance packages for extended stays in Kutch.</p>
+                        <a href="#leasing" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicle Types Section -->
+    <section class="vehicle-types" id="fleet">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Diverse Fleet</h2>
+                <p>Choose from our wide selection of vehicles for every need and budget</p>
+            </div>
+            <div class="row">
+                <!-- Economy Cars -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Economy Cars">
+                        </div>
+                        <div class="vehicle-body">
+                            <h3>Economy Cars</h3>
+                            <ul class="vehicle-features">
+                                <li><i class="fas fa-check"></i> 4-5 Seaters</li>
+                                <li><i class="fas fa-check"></i> 20-25 kmpl Mileage</li>
+                                <li><i class="fas fa-check"></i> AC & Music System</li>
+                                <li><i class="fas fa-check"></i> Perfect for City Rides</li>
+                            </ul>
+                            <div class="vehicle-price">
+                                ₹1200/day <span>(+ taxes & fees)</span>
+                            </div>
+                            <button class="btn btn-vehicle">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sedans -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sedan Cars">
+                        </div>
+                        <div class="vehicle-body">
+                            <h3>Premium Sedans</h3>
+                            <ul class="vehicle-features">
+                                <li><i class="fas fa-check"></i> 4-5 Seaters</li>
+                                <li><i class="fas fa-check"></i> Luxury Comfort</li>
+                                <li><i class="fas fa-check"></i> Spacious Interiors</li>
+                                <li><i class="fas fa-check"></i> Business Travel Ready</li>
+                            </ul>
+                            <div class="vehicle-price">
+                                ₹2500/day <span>(+ taxes & fees)</span>
+                            </div>
+                            <button class="btn btn-vehicle">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUVs -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="SUV Cars">
+                        </div>
+                        <div class="vehicle-body">
+                            <h3>SUV Vehicles</h3>
+                            <ul class="vehicle-features">
+                                <li><i class="fas fa-check"></i> 5-7 Seaters</li>
+                                <li><i class="fas fa-check"></i> Powerful Performance</li>
+                                <li><i class="fas fa-check"></i> All-Terrain Capability</li>
+                                <li><i class="fas fa-check"></i> Family Road Trips</li>
+                            </ul>
+                            <div class="vehicle-price">
+                                ₹3500/day <span>(+ taxes & fees)</span>
+                            </div>
+                            <button class="btn btn-vehicle">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tempo Traveller -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tempo Traveller">
+                        </div>
+                        <div class="vehicle-body">
+                            <h3>Tempo Traveller</h3>
+                            <ul class="vehicle-features">
+                                <li><i class="fas fa-check"></i> 12-15 Seaters</li>
+                                <li><i class="fas fa-check"></i> Comfortable Seating</li>
+                                <li><i class="fas fa-check"></i> Luggage Space</li>
+                                <li><i class="fas fa-check"></i> Group Travel Solution</li>
+                            </ul>
+                            <div class="vehicle-price">
+                                ₹4500/day <span>(+ taxes & fees)</span>
+                            </div>
+                            <button class="btn btn-vehicle">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Force Urbania -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2021/12/OV/CF/IL/3033603/force-traveller-26-seater-bus.jpg" alt="Force Urbania">
+                        </div>
+                        <div class="vehicle-body">
+                            <h3>Force Urbania</h3>
+                            <ul class="vehicle-features">
+                                <li><i class="fas fa-check"></i> 20-26 Seaters</li>
+                                <li><i class="fas fa-check"></i> Luxury Bus Service</li>
+                                <li><i class="fas fa-check"></i> Comfortable Travel</li>
+                                <li><i class="fas fa-check"></i> Corporate Events</li>
+                            </ul>
+                            <div class="vehicle-price">
+                                ₹6000/day <span>(+ taxes & fees)</span>
+                            </div>
+                            <button class="btn btn-vehicle">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luxury Buses -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="vehicle-card">
+                        <div class="vehicle-img">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Luxury Buses">
+                        </div>
+                        <div class="vehicle-body">
+                            <h3>Luxury Buses</h3>
+                            <ul class="vehicle-features">
+                                <li><i class="fas fa-check"></i> 35-50 Seaters</li>
+                                <li><i class="fas fa-check"></i> Premium Comfort</li>
+                                <li><i class="fas fa-check"></i> Entertainment Systems</li>
+                                <li><i class="fas fa-check"></i> Large Group Travel</li>
+                            </ul>
+                            <div class="vehicle-price">
+                                ₹9000/day <span>(+ taxes & fees)</span>
+                            </div>
+                            <button class="btn btn-vehicle">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Kutch Rentals?</h2>
+                <p>We go the extra mile to make your car rental experience exceptional</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Fully Insured</h4>
+                        <p>All our vehicles come with comprehensive insurance coverage for your peace of mind.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Well Maintained</h4>
+                        <p>Regular servicing and strict quality checks ensure our fleet is always in top condition.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p>Our customer service team is available round the clock to assist you.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <h4>No Hidden Costs</h4>
+                        <p>Transparent pricing with no surprise charges - you pay only what's quoted.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="cta-title">Ready to Explore Kutch?</h2>
+                    <p class="cta-text">Book your perfect vehicle today and experience the best car rental service in the region with unmatched convenience and reliability.</p>
+                    <a href="contact.html" class="btn btn-cta">Contact Us Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <a href="index.html" class="footer-logo"><i class="fas fa-car"></i>Kutch<span>Rentals</span></a>
+                        <p>Providing premium car rental services in Kutch since 2010. We pride ourselves on exceptional customer service and a well-maintained fleet of vehicles.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h4 class="footer-title">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="index.html#fleet"><i class="fas fa-chevron-right"></i> Our Fleet</a></li>
+                            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h4 class="footer-title">Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Self Drive Rentals</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Chauffeur Services</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Airport Transfers</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Corporate Rentals</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Long Term Leasing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h4 class="footer-title">Contact Info</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Site B, Katira Commercial, Bhuj, Kutch, Gujarat 370001</p>
+                        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@kutchrentals.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 10:00 PM</p>
+
+                        <h4 class="footer-title mt-4">Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your Email">
+                            <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 <a href="#">Kutch Car Rentals</a>. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-orange);"></i> by Kutch Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+
+                    // Update URL without page reload
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        location.hash = targetId;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
