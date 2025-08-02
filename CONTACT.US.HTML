@@ -418,6 +418,230 @@
             font-weight: 600;
         }
 
+        .footer {
+            background: linear-gradient(135deg, var(--black) 0%, #111827 100%);
+            color: var(--white);
+            padding: 100px 0 30px;
+            position: relative;
+        }
+
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-logo span {
+            color: var(--primary-orange);
+        }
+
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--primary-blue);
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--primary-orange);
+            font-size: 0.8rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.05rem;
+        }
+
+        .footer-contact i {
+            margin-right: 15px;
+            color: var(--primary-orange);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Newsletter */
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-btn {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1199px) {
+            .fleet-hero .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .fleet-hero .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .fleet-hero {
+                height: 40vh;
+                min-height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fleet-hero .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .fleet-hero .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .fleet-hero {
+                height: 35vh;
+                min-height: 300px;
+            }
+
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .contact-hero .hero-title {
@@ -520,15 +744,16 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-    <div class="contact-card">
-        <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-        </div>
-        <h3>Our Location</h3>
-        <p>Site B, Katira Commercial, Office Relocation Site, B/129, RTO Ring Rd, RTO Relocation Site, Bhuj, Gujarat 370001</p>
-        <a href="#map" class="contact-link">View on map <i class="fas fa-arrow-right"></i></a>
-    </div>
-</div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Our Location</h3>
+                        <p>Site B, Katira Commercial, Office Relocation Site, B/129, RTO Ring Rd, RTO Relocation Site,
+                            Bhuj, Gujarat 370001</p>
+                        <a href="#map" class="contact-link">View on map <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="contact-card">
                         <div class="contact-icon">
@@ -567,7 +792,8 @@
                     <div class="mt-4">
                         <h4>Emergency Support</h4>
                         <p>For immediate assistance outside business hours, please call our 24/7 support line at
-                            <strong>+91 98765 43219</strong>.</p>
+                            <strong>+91 98765 43219</strong>.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-6">
