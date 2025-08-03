@@ -1095,10 +1095,10 @@
                         <a class="nav-link" href="/about.us.html">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/contact.us.html">Contact</a>
+                        <a class="nav-link" href="/CONTACT.US.HTML">Contact</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-nav" href="https://api.whatsapp.com/send?phone=7874636363">Book Now</a>
+                        <a class="btn btn-nav" href="#book-now">Book Now</a>
                     </li>
                 </ul>
             </div>
@@ -1236,7 +1236,10 @@
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
+
+    <!-- Fleet Section : REMOVED-->
+
 
     <!-- Testimonials Section -->
     <section class="testimonial-section" id="reviews">
@@ -1320,21 +1323,21 @@
                 <div class="col-lg-8 mx-auto">
                     <div class="booking-form">
                         <h3 class="form-title">Book Your Car Now</h3>
-                        <form id="whatsappBookingForm">
+                        <form>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
+                                    <input type="tel" class="form-control" placeholder="Phone Number" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control" id="vehicleType" required>
+                                    <select class="form-control" required>
                                         <option value="" selected disabled>Select Vehicle Type</option>
                                         <option>Economy Car</option>
                                         <option>Sedan</option>
@@ -1346,15 +1349,15 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="date" class="form-control" id="pickupDate" placeholder="Pickup Date" required>
+                                    <input type="date" class="form-control" placeholder="Pickup Date" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="date" class="form-control" id="returnDate" placeholder="Return Date" required>
+                                    <input type="date" class="form-control" placeholder="Return Date" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <select class="form-control" id="pickupLocation" required>
+                                    <select class="form-control" required>
                                         <option value="" selected disabled>Pickup Location</option>
                                         <option>Bhuj Airport</option>
                                         <option>Bhuj City Center</option>
@@ -1364,7 +1367,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control" id="dropoffLocation">
+                                    <select class="form-control">
                                         <option value="" selected disabled>Drop-off Location</option>
                                         <option>Same as Pickup</option>
                                         <option>Bhuj Airport</option>
@@ -1375,8 +1378,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <textarea class="form-control" id="requirements" placeholder="Special Requirements (Optional)"></textarea>
-                            <button type="button" class="btn-book" onclick="submitBooking()">
+                            <textarea class="form-control" placeholder="Special Requirements (Optional)"></textarea>
+                            <button type="submit" class="btn-book">
                                 <i class="fas fa-paper-plane me-2"></i> Submit Booking Request
                             </button>
                         </form>
@@ -1392,7 +1395,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-about">
-                        <a href="/index.html" class="footer-logo"><i
+                        <a href="#" class="footer-logo"><i
                                 class="fas fa-car"></i>Kutch<span>Car</span><span>Rentals</span></a>
                         <p>Providing premium car rental services in Kutch since 2010. We pride ourselves on exceptional
                             customer service and a well-maintained fleet of vehicles.</p>
@@ -1408,12 +1411,12 @@
                     <div class="footer-links">
                         <h4 class="footer-title">Quick Links</h4>
                         <ul class="footer-links">
-                            <li><a href="/index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                            <li><a href="/fleet.html"><i class="fas fa-chevron-right"></i> Our Fleet</a></li>
-                            <li><a href="/service.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-                            <li><a href="/about.us.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="#fleet"><i class="fas fa-chevron-right"></i> Our Fleet</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
                             <li><a href="#reviews"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
-                            <li><a href="/contact.us.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1421,21 +1424,21 @@
                     <div class="footer-links">
                         <h4 class="footer-title">Our Services</h4>
                         <ul class="footer-links">
-                            <li><a href="#"><i class="fas fa-chevron-right"></i> Self Drive Rentals</a></li>
-                            <li><a href="#"><i class="fas fa-chevron-right"></i> Chauffeur Services</a></li>
-                            <li><a href="#"><i class="fas fa-chevron-right"></i> Airport Transfers</a></li>
-                            <li><a href="#"><i class="fas fa-chevron-right"></i> Corporate Rentals</a></li>
-                            <li><a href="#"><i class="fas fa-chevron-right"></i> Long Term Leasing</a></li>
-                            <li><a href="#"><i class="fas fa-chevron-right"></i> Wedding Cars</a></li>
+                            <li><a href="/CONTACT.US.HTML"><i class="fas fa-chevron-right"></i> Self Drive Rentals</a></li>
+                            <li><a href="/CONTACT.US.HTML"><i class="fas fa-chevron-right"></i> Chauffeur Services</a></li>
+                            <li><a href="/CONTACT.US.HTML"><i class="fas fa-chevron-right"></i> Airport Transfers</a></li>
+                            <li><a href="/CONTACT.US.HTML"><i class="fas fa-chevron-right"></i> Corporate Rentals</a></li>
+                            <li><a href="/CONTACT.US.HTML"><i class="fas fa-chevron-right"></i> Long Term Leasing</a></li>
+                            <li><a href="/CONTACT.US.HTML"><i class="fas fa-chevron-right"></i> Wedding Cars</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-contact">
                         <h4 class="footer-title">Contact Us</h4>
-                        <a href="https://maps.app.goo.gl/ZFfHBzbPy4NzFNHd9" style="color: inherit; text-decoration: none;"><i class="fas fa-map-marker-alt"></i> Site B, Katira Commercial, Office Relocation Site, B/129, RTO Ring Rd, RTO Relocation Site, Bhuj, Gujarat 370001</a><br>
-                        <a href="tel:+917874636363" style="color: inherit; text-decoration: none;"><i class="fas fa-phone-alt"></i> +91 98765 43210</a><br>
-                        <a href="mailto:info@kutchcarrental.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i> info@kutchrentals.com</a><br>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Business Park, Bhuj, Kutch, Gujarat 370001</p>
+                        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                        <p><i class="fas fa-envelope"></i> info@kutchrentals.com</p>
                         <p><i class="fas fa-clock"></i> Mon-Sun: 8:00 AM - 10:00 PM</p>
 
                         <h4 class="footer-title mt-4">Newsletter</h4>
@@ -1514,63 +1517,6 @@
             card.style.transition = 'all 0.5s ease';
             observer.observe(card);
         });
-        function formatDate(inputDate) {
-        if (!inputDate) return '';
-        const date = new Date(inputDate);
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const year = date.getFullYear();
-        return `${day}-${month}-${year}`;
-    }
-
-    function submitBooking() {
-        // Get form values
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const email = document.getElementById('email').value;
-        const vehicleType = document.getElementById('vehicleType').value;
-        const pickupDate = document.getElementById('pickupDate').value;
-        const returnDate = document.getElementById('returnDate').value;
-        const pickupLocation = document.getElementById('pickupLocation').value;
-        const dropoffLocation = document.getElementById('dropoffLocation').value;
-        const requirements = document.getElementById('requirements').value;
-
-        // Validate required fields
-        if (!name || !phone || !vehicleType || !pickupDate || !returnDate || !pickupLocation) {
-            alert('Please fill in all required fields');
-            return;
-        }
-
-        // Format dates as DD-MM-YYYY
-        const formattedPickupDate = formatDate(pickupDate);
-        const formattedReturnDate = formatDate(returnDate);
-
-        // Create WhatsApp message in the exact format shown in the screenshot
-        let message = `*New Car Booking Request:*\n\n`;
-        message += `*Name:* ${name}\n`;
-        message += `*Phone:* ${phone}\n`;
-        if (email) message += `*Email:* ${email}\n`;
-        message += `*Vehicle Type:* ${vehicleType}\n`;
-        message += `*Pickup Date:* ${formattedPickupDate}\n`;
-        message += `*Return Date:* ${formattedReturnDate}\n`;
-        message += `*Pickup Location:* ${pickupLocation}\n`;
-        if (dropoffLocation && dropoffLocation !== 'Same as Pickup') {
-            message += `*Drop-off Location:* ${dropoffLocation}\n`;
-        }
-        if (requirements) message += `*Special Requirements:* ${requirements}\n`;
-
-        // Encode message for URL (preserving newlines and formatting)
-        const encodedMessage = encodeURIComponent(message);
-        
-        // WhatsApp number (replace with your actual number)
-        const whatsappNumber = '917674636363'; // Example: +91 98765 43210
-        
-        // Open WhatsApp with pre-filled message
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-        
-        // Optional: Reset form after submission
-        // document.getElementById('whatsappBookingForm').reset();
-    }
     </script>
 </body>
 
