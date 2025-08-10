@@ -1,10 +1,41 @@
+# Complete SEO-Optimized Responsive Car Rental Website Code
+
+Here's the complete code with top SEO optimizations implemented:
+
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kutch Car Rental - Premium Car Hire Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description"
+        content="Premium car rental services in Kutch - Best rates on luxury cars, SUVs, and economy vehicles. 24/7 support, free cancellation, and no hidden charges.">
+    <meta name="keywords"
+        content="Kutch car rental, Bhuj car hire, Gujarat car rental, luxury car rental, SUV rental, airport transfer">
+    <meta name="author" content="Kutch Car Rental">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta property="og:title" content="Kutch Car Rental - Premium Car Hire Services">
+    <meta property="og:description"
+        content="Premium car rental services in Kutch with best rates and exceptional service">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kutchcarrental.com">
+    <meta property="og:image" content="https://www.kutchcarrental.com/images/logo-social.jpg">
+    <meta property="og:site_name" content="Kutch Car Rental">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kutch Car Rental - Premium Car Hire Services">
+    <meta name="twitter:description"
+        content="Premium car rental services in Kutch with best rates and exceptional service">
+    <meta name="twitter:image" content="https://www.kutchcarrental.com/images/logo-social.jpg">
+    <link rel="canonical" href="https://www.kutchcarrental.com">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Kutch Car Rental - Premium Car Hire Services in Bhuj, Gujarat</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,6 +44,50 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap"
         rel="stylesheet">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CarRental",
+      "name": "Kutch Car Rental",
+      "image": "https://www.kutchcarrental.com/images/logo.jpg",
+      "@id": "https://www.kutchcarrental.com",
+      "url": "https://www.kutchcarrental.com",
+      "telephone": "+917874636363",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Site B, Katira Commercial, Office Relocation Site, B/129, RTO Ring Rd",
+        "addressLocality": "Bhuj",
+        "addressRegion": "Gujarat",
+        "postalCode": "370001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 23.241999,
+        "longitude": 69.666931
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61578690844776",
+        "https://www.instagram.com/kutch_car_rental/"
+      ]
+    }
+    </script>
     <style>
         :root {
             --primary-orange: #FF6B35;
@@ -51,11 +126,17 @@
 
         /* Navigation */
         .navbar {
-            padding: 20px 0;
-            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            /* vertically center items */
+            justify-content: space-between;
+            /* space between logo and menu */
+            padding: 8px 20px;
+            /* reduced padding */
             background-color: var(--white);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
             border-bottom: 1px solid var(--gray-medium);
+            transition: all 0.3s ease;
         }
 
         .navbar.scrolled {
@@ -1064,6 +1145,7 @@
                 font-size: 0.95rem;
             }
         }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
@@ -1133,6 +1215,7 @@
                 font-size: 2.5rem;
             }
         }
+
         /* Hero Slider Styles */
         .hero-slider {
             position: relative;
@@ -1188,21 +1271,76 @@
             background-color: var(--white);
             transform: scale(1.2);
         }
+
+        /* SEO Optimizations */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: ">";
+            color: var(--gray-dark);
+        }
+
+        .breadcrumb-item a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        /* Optimize images */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Improve CLS */
+        .hero-image img,
+        .fleet-img img,
+        .testimonial-author img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Preload critical resources */
+        link[rel="preload"] {
+            display: none;
+        }
     </style>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap"
+        as="style">
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="/kutch car rental/assets/css/image/logo_new.png" alt="Logo"
-                    style="height: 50px; vertical-align: middle; margin-right: 10px;">
+            <a class="navbar-brand" href="index.html" aria-label="Kutch Car Rental Home">
+                <img src="/kutch car rental/assets/css/image/logo_new.png" alt="Kutch Car Rental Logo" width="180" height="50"
+                    loading="lazy">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -1221,88 +1359,126 @@
                         <a class="nav-link" href="/contact_us.HTML">Contact</a>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a class="btn btn-nav" href="https://api.whatsapp.com/send?phone=7874636363&text=Hi%2C%20I%20got%20connected%20with%20you%20from%20your%20website"target="_blank">Book Now</a>
+                        <a class="btn btn-nav"
+                            href="https://api.whatsapp.com/send?phone=7874636363&text=Hi%2C%20I%20got%20connected%20with%20you%20from%20your%20website"
+                            target="_blank" rel="noopener noreferrer">Book Now</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Breadcrumb -->
+    <!-- <div class="container mt-5 pt-5 d-none d-md-block">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Car Rental Services in Kutch</li>
+            </ol>
+        </nav>
+    </div> -->
+
     <!-- Hero Section -->
     <section class="hero-slider" id="home">
         <!-- Slide 1 -->
-        <div class="hero-slide active" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);">
+        <div class="hero-slide active"
+            style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);">
             <div class="hero-overlay"></div>
             <div class="hero-container">
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1 class="hero-title">Premium Car Rental Services in Kutch</h1>
-                        <p class="hero-subtitle">Experience seamless travel with our wide range of vehicles. Whether you need a sedan for business or an SUV for family trips, we've got you covered with the best rates and exceptional service.</p>
+                        <p class="hero-subtitle">Experience seamless travel with our wide range of vehicles. Whether you
+                            need a sedan for business or an SUV for family trips, we've got you covered with the best
+                            rates and exceptional service.</p>
                         <div class="hero-buttons">
-                            <a href="#book-now" class="btn-hero btn-primary-hero"><i class="fas fa-calendar-alt me-2"></i> Book Now</a>
-                            <a href="fleet.html" class="btn-hero btn-secondary-hero"><i class="fas fa-car me-2"></i> Our Fleet</a>
+                            <a href="#book-now" class="btn-hero btn-primary-hero"><i
+                                    class="fas fa-calendar-alt me-2"></i> Book Now</a>
+                            <a href="fleet.html" class="btn-hero btn-secondary-hero"><i class="fas fa-car me-2"></i> Our
+                                Fleet</a>
                         </div>
                         <div class="mt-4 d-flex flex-wrap gap-2">
-                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> Free Cancellation</span>
-                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> 24/7 Support</span>
-                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> No Hidden Charges</span>
+                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> Free
+                                Cancellation</span>
+                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> 24/7
+                                Support</span>
+                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> No
+                                Hidden Charges</span>
                         </div>
                     </div>
                     <div class="hero-image">
                         <div class="hero-badge">Best Rates Guaranteed!</div>
-                        <img src="/kutch car rental/assets/css/image/xcent.png" alt="Luxury Car Rental in Kutch">
+                        <img src="/hyundai-creta-rental.jpg" alt="Hyundai Creta available for rent in Kutch" width="600"
+                            height="400" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Slide 2 -->
-        <div class="hero-slide active" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);">
+        <div class="hero-slide"
+            style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);">
             <div class="hero-overlay"></div>
             <div class="hero-container">
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1 class="hero-title">Luxury Cars for Special Occasions</h1>
-                        <p class="hero-subtitle">Make your special moments unforgettable with our premium luxury vehicles. Perfect for weddings, anniversaries, and corporate events.</p>
+                        <p class="hero-subtitle">Make your special moments unforgettable with our premium luxury
+                            vehicles. Perfect for weddings, anniversaries, and corporate events.</p>
                         <div class="hero-buttons">
-                            <a href="#book-now" class="btn-hero btn-primary-hero"><i class="fas fa-calendar-alt me-2"></i> Book Now</a>
-                            <a href="fleet.html" class="btn-hero btn-secondary-hero"><i class="fas fa-car me-2"></i> View Luxury Fleet</a>
+                            <a href="#book-now" class="btn-hero btn-primary-hero"><i
+                                    class="fas fa-calendar-alt me-2"></i> Book Now</a>
+                            <a href="fleet.html" class="btn-hero btn-secondary-hero"><i class="fas fa-car me-2"></i>
+                                View Luxury Fleet</a>
                         </div>
                         <div class="mt-4 d-flex flex-wrap gap-2">
-                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> Chauffeur Service</span>
-                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> Premium Vehicles</span>
-                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> Custom Decorations</span>
+                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i>
+                                Chauffeur Service</span>
+                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i>
+                                Premium Vehicles</span>
+                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i>
+                                Custom Decorations</span>
                         </div>
                     </div>
                     <div class="hero-image">
                         <div class="hero-badge">Special Offers!</div>
-                        <img src="/kutch car rental/assets/css/image/xcent.png" alt="Luxury Car for Weddings">
+                        <img src="/luxury-car-rental-kutch.jpg"
+                            alt="Luxury car for weddings and special occasions in Kutch" width="600" height="400"
+                            loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Slide 3 -->
-        <div class="hero-slide active" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);">
+        <div class="hero-slide"
+            style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);">
             <div class="hero-overlay"></div>
             <div class="hero-container">
                 <div class="hero-content">
                     <div class="hero-text">
                         <h1 class="hero-title">Explore Kutch in Comfort</h1>
-                        <p class="hero-subtitle">Discover the beautiful landscapes of Kutch with our reliable and comfortable vehicles. We offer flexible rental options for all your travel needs.</p>
+                        <p class="hero-subtitle">Discover the beautiful landscapes of Kutch with our reliable and
+                            comfortable vehicles. We offer flexible rental options for all your travel needs.</p>
                         <div class="hero-buttons">
-                            <a href="#book-now" class="btn-hero btn-primary-hero"><i class="fas fa-calendar-alt me-2"></i> Book Now</a>
-                            <a href="fleet.html" class="btn-hero btn-secondary-hero"><i class="fas fa-map-marked-alt me-2"></i> Tour Packages</a>
+                            <a href="#book-now" class="btn-hero btn-primary-hero"><i
+                                    class="fas fa-calendar-alt me-2"></i> Book Now</a>
+                            <a href="fleet.html" class="btn-hero btn-secondary-hero"><i
+                                    class="fas fa-map-marked-alt me-2"></i> Tour Packages</a>
                         </div>
                         <div class="mt-4 d-flex flex-wrap gap-2">
-                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> Unlimited Mileage</span>
-                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> 24/7 Road Assistance</span>
-                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> GPS Navigation</span>
+                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i>
+                                Unlimited Mileage</span>
+                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> 24/7
+                                Road Assistance</span>
+                            <span class="badge bg-white text-primary p-2"><i class="fas fa-check-circle me-1"></i> GPS
+                                Navigation</span>
                         </div>
                     </div>
                     <div class="hero-image">
                         <div class="hero-badge">Explore More!</div>
-                        <img src="/kutch car rental/assets/css/image/xcent.png" alt="Explore Kutch">
+                        <img src="/kutch-tour-car-rental.jpg" alt="Car rental for exploring Kutch tourist places"
+                            width="600" height="400" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1310,9 +1486,9 @@
 
         <!-- Slider Navigation Dots -->
         <div class="hero-slider-nav">
-            <div class="hero-slider-dot active" data-slide="0"></div>
-            <div class="hero-slider-dot" data-slide="1"></div>
-            <div class="hero-slider-dot" data-slide="2"></div>
+            <div class="hero-slider-dot active" data-slide="0" aria-label="Go to slide 1"></div>
+            <div class="hero-slider-dot" data-slide="1" aria-label="Go to slide 2"></div>
+            <div class="hero-slider-dot" data-slide="2" aria-label="Go to slide 3"></div>
         </div>
     </section>
 
@@ -1360,7 +1536,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-car"></i>
+                            <i class="fas fa-car" aria-hidden="true"></i>
                         </div>
                         <h3>Wide Range of Vehicles</h3>
                         <p>Choose from our extensive fleet of well-maintained vehicles to suit every need and budget.
@@ -1370,7 +1546,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-tag"></i>
+                            <i class="fas fa-tag" aria-hidden="true"></i>
                         </div>
                         <h3>Competitive Pricing</h3>
                         <p>Get the best value for your money with our transparent and competitive pricing.</p>
@@ -1379,7 +1555,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-headset"></i>
+                            <i class="fas fa-headset" aria-hidden="true"></i>
                         </div>
                         <h3>24/7 Customer Support</h3>
                         <p>Our dedicated support team is available round the clock to assist you.</p>
@@ -1388,7 +1564,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         </div>
                         <h3>Multiple Locations</h3>
                         <p>Convenient pickup and drop-off locations across Kutch for your ease.</p>
@@ -1397,7 +1573,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
                         </div>
                         <h3>Fully Insured</h3>
                         <p>All our vehicles come with comprehensive insurance coverage.</p>
@@ -1406,7 +1582,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                         </div>
                         <h3>Flexible Rental Periods</h3>
                         <p>Rent by the hour, day, week or month - whatever suits your schedule.</p>
@@ -1416,8 +1592,82 @@
         </div>
     </section>
 
-    <!-- Fleet Section : REMOVED-->
-
+    <!-- Fleet Section -->
+    <section class="fleet-section" id="fleet">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Fleet</h2>
+                <p>Choose from our diverse collection of well-maintained vehicles for every need and budget</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-badge">Most Popular</div>
+                        <div class="fleet-img">
+                            <img src="/hyundai-creta-rental.jpg" alt="Hyundai Creta rental in Kutch" width="400"
+                                height="300" loading="lazy">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">Hyundai Creta</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 5 Seater</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                                <span><i class="fas fa-cogs"></i> Automatic</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹2,499 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-img">
+                            <img src="/toyota-innova-rental.jpg" alt="Toyota Innova rental in Bhuj" width="400"
+                                height="300" loading="lazy">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">Toyota Innova Crysta</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 7 Seater</span>
+                                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                                <span><i class="fas fa-cogs"></i> Automatic</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹3,499 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fleet-card">
+                        <div class="fleet-badge">Luxury</div>
+                        <div class="fleet-img">
+                            <img src="/mercedes-benz-rental.jpg" alt="Luxury Mercedes Benz rental in Kutch" width="400"
+                                height="300" loading="lazy">
+                        </div>
+                        <div class="fleet-body">
+                            <h3 class="fleet-title">Mercedes-Benz E-Class</h3>
+                            <div class="fleet-meta">
+                                <span><i class="fas fa-users"></i> 4 Seater</span>
+                                <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                                <span><i class="fas fa-cogs"></i> Automatic</span>
+                            </div>
+                            <div class="fleet-price">
+                                ₹6,999 <span>/ day</span>
+                            </div>
+                            <button class="btn-fleet">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="fleet.html" class="btn btn-primary btn-lg">View All Vehicles</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials Section -->
     <section class="testimonial-section" id="reviews">
@@ -1430,17 +1680,18 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
                         <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
                         </div>
                         <p class="testimonial-text">"Excellent service! The car was clean, well-maintained and exactly
                             as described. The pickup and drop-off process was seamless. Will definitely use Kutch
                             Rentals again for my next trip."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                            <img src="/customer-rajesh.jpg" alt="Rajesh Patel testimonial" width="60" height="60"
+                                loading="lazy">
                             <div class="author-info">
                                 <h5>Rajesh Patel</h5>
                                 <p>Business Traveler</p>
@@ -1451,17 +1702,18 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
                         <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
                         </div>
                         <p class="testimonial-text">"We rented a Fortuner for our family vacation and it was perfect.
                             Spacious, comfortable and great for long drives. The staff was very helpful with all our
                             queries. Highly recommended!"</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                            <img src="/customer-priya.jpg" alt="Priya Sharma testimonial" width="60" height="60"
+                                loading="lazy">
                             <div class="author-info">
                                 <h5>Priya Sharma</h5>
                                 <p>Family Vacation</p>
@@ -1472,17 +1724,18 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="testimonial-card">
                         <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
                         </div>
                         <p class="testimonial-text">"As a frequent traveler, I've used many rental services but Kutch
                             Rentals stands out for their professionalism and quality vehicles. Their pricing is
                             transparent with no hidden charges."</p>
                         <div class="testimonial-author">
-                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client">
+                            <img src="/customer-amit.jpg" alt="Amit Desai testimonial" width="60" height="60"
+                                loading="lazy">
                             <div class="author-info">
                                 <h5>Amit Desai</h5>
                                 <p>Corporate Client</p>
@@ -1500,22 +1753,28 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="booking-form">
-                        <h3 class="form-title">Book Your Car Now</h3>
-                        <form>
+                        <h2 class="form-title">Book Your Car Now</h2>
+                        <form id="bookingForm" onsubmit="submitBooking(); return false;">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                    <label for="name" class="sr-only">Your Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                    <label for="email" class="sr-only">Your Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                        required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="tel" class="form-control" placeholder="Phone Number" required>
+                                    <label for="phone" class="sr-only">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control" required>
+                                    <label for="vehicleType" class="sr-only">Select Vehicle Type</label>
+                                    <select class="form-control" id="vehicleType" required>
                                         <option value="" selected disabled>Select Vehicle Type</option>
                                         <option>Economy Car</option>
                                         <option>Sedan</option>
@@ -1527,15 +1786,20 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="date" class="form-control" placeholder="Pickup Date" required>
+                                    <label for="pickupDate" class="sr-only">Pickup Date</label>
+                                    <input type="date" class="form-control" id="pickupDate" placeholder="Pickup Date"
+                                        required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="date" class="form-control" placeholder="Return Date" required>
+                                    <label for="returnDate" class="sr-only">Return Date</label>
+                                    <input type="date" class="form-control" id="returnDate" placeholder="Return Date"
+                                        required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <select class="form-control" required>
+                                    <label for="pickupLocation" class="sr-only">Pickup Location</label>
+                                    <select class="form-control" id="pickupLocation" required>
                                         <option value="" selected disabled>Pickup Location</option>
                                         <option>Bhuj Airport</option>
                                         <option>Bhuj City Center</option>
@@ -1545,7 +1809,8 @@
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control">
+                                    <label for="dropoffLocation" class="sr-only">Drop-off Location</label>
+                                    <select class="form-control" id="dropoffLocation">
                                         <option value="" selected disabled>Drop-off Location</option>
                                         <option>Same as Pickup</option>
                                         <option>Bhuj Airport</option>
@@ -1556,11 +1821,102 @@
                                     </select>
                                 </div>
                             </div>
-                            <textarea class="form-control" placeholder="Special Requirements (Optional)"></textarea>
+                            <label for="requirements" class="sr-only">Special Requirements</label>
+                            <textarea class="form-control" id="requirements"
+                                placeholder="Special Requirements (Optional)"></textarea>
                             <button type="submit" class="btn-book">
-                                <i class="fas fa-paper-plane me-2"></i> Submit Booking Request
+                                <i class="fas fa-paper-plane me-2" aria-hidden="true"></i> Submit Booking Request
                             </button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="features-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our car rental services</p>
+            </div>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What documents do I need to rent a car?
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You'll need a valid driver's license, proof of identity (Aadhaar card, passport, or PAN
+                            card), and proof of address. For international travelers, an international driving permit
+                            along with your passport is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What is your cancellation policy?
+                        </button>
+                    </h3>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can cancel your booking free of charge up to 24 hours before your scheduled pickup time.
+                            For cancellations within 24 hours, a cancellation fee of one day's rental charge may apply.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Do you offer one-way rentals?
+                        </button>
+                    </h3>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we offer one-way rentals between our locations in Kutch. Additional charges may apply
+                            depending on the distance between pickup and drop-off locations.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Is there a mileage limit?
+                        </button>
+                    </h3>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Most of our rentals come with unlimited mileage within Gujarat. For inter-state travel,
+                            please check with our team as some restrictions may apply.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            What happens if the car breaks down?
+                        </button>
+                    </h3>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            All our vehicles are well-maintained, but in the rare event of a breakdown, we provide 24/7
+                            roadside assistance. Just call our emergency number and we'll help you get back on the road
+                            as quickly as possible.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1574,61 +1930,83 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-about">
                         <a href="/index.html" class="footer-logo">
-                            <img src="/kutch car rental/assets/css/image/logo_new.png" alt="Logo"
-                                style="height: 100px; vertical-align: middle; margin-right: 10px;">
+                            <img src="/kutch-car-rental-logo-white.png" alt="Kutch Car Rental Logo" width="200"
+                                height="60" loading="lazy">
                         </a>
                         <p>Providing premium car rental services in Kutch since 2010. We pride ourselves on exceptional
                             customer service and a well-maintained fleet of vehicles.</p>
                         <div class="social-icons">
-                            <a href="https://www.facebook.com/profile.php?id=61578690844776" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/kutch_car_rental/?utm_source=ig_web_button_share_sheet&igsh=emc2am45MmhnYnBk#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61578690844776" class="social-icon"
+                                aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/kutch_car_rental/?utm_source=ig_web_button_share_sheet&igsh=emc2am45MmhnYnBk#"
+                                class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"
+                                    aria-hidden="true"></i></a>
+                            <a href="https://api.whatsapp.com/send?phone=7874636363" class="social-icon"
+                                aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <div class="footer-links">
-                        <h4 class="footer-title">Quick Links</h4>
+                        <h3 class="footer-title">Quick Links</h3>
                         <ul class="footer-links">
-                            <li><a href="/index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                            <li><a href="/fleet.html"><i class="fas fa-chevron-right"></i> Our Fleet</a></li>
-                            <li><a href="/service.html"><i class="fas fa-chevron-right"></i> Services</a></li>
-                            <li><a href="/about.us.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                            <li><a href="#reviews"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                            <li><a href="/index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a>
+                            </li>
+                            <li><a href="/fleet.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Our
+                                    Fleet</a></li>
+                            <li><a href="/service.html"><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    Services</a></li>
+                            <li><a href="/about.us.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About
+                                    Us</a></li>
+                            <li><a href="#reviews"><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    Testimonials</a></li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    Contact</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-links">
-                        <h4 class="footer-title">Our Services</h4>
+                        <h3 class="footer-title">Our Services</h3>
                         <ul class="footer-links">
-                            <li><a href="/testing2.html"><i class="fas fa-chevron-right"></i> Self Drive Rentals</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Chauffeur Services</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Airport Transfers</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Corporate Rentals</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Long Term Leasing</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Wedding Cars</a></li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right" aria-hidden="true"></i> Self
+                                    Drive Rentals</a></li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    Chauffeur Services</a></li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    Airport Transfers</a></li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    Corporate Rentals</a></li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right" aria-hidden="true"></i> Long
+                                    Term Leasing</a></li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    Wedding Cars</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-contact">
                         <h4 class="footer-title">Contact Us</h4>
-                        <a href="https://maps.app.goo.gl/ZFfHBzbPy4NzFNHd9" style="color: inherit; text-decoration: none;"><i class="fas fa-map-marker-alt"></i> Site B, Katira Commercial, Office Relocation Site, B/129, RTO Ring Rd, RTO Relocation Site, Bhuj, Gujarat 370001</a><br>
-                        <a href="tel:+917874636363" style="color: inherit; text-decoration: none;"><i class="fas fa-phone-alt"></i> +91 98765 43210</a><br>
-                        <a href="mailto:info@kutchcarrental.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i> info@kutchrentals.com</a><br>
+                        <a href="https://maps.app.goo.gl/ZFfHBzbPy4NzFNHd9"
+                            style="color: inherit; text-decoration: none;"><i class="fas fa-map-marker-alt"></i> Site B,
+                            Katira Commercial, Office Relocation Site, B/129, RTO Ring Rd, RTO Relocation Site, Bhuj,
+                            Gujarat 370001</a><br>
+                        <a href="tel:+917874636363" style="color: inherit; text-decoration: none;"><i
+                                class="fas fa-phone-alt"></i> +91 98765 43210</a><br>
+                        <a href="mailto:info@kutchcarrental.com" style="color: inherit; text-decoration: none;"><i
+                                class="fas fa-envelope"></i> info@kutchrentals.com</a><br>
                         <p><i class="fas fa-clock"></i> Mon-Sun: 8:00 AM - 10:00 PM</p>
 
                         <h4 class="footer-title mt-4">Newsletter</h4>
-                        <form class="newsletter-form">
+                        <!-- <form class="newsletter-form">
                             <input type="email" class="newsletter-input" placeholder="Your Email">
                             <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 <a href="#">Kutch Car Rentals</a>. All Rights Reserved. | Developed & Designed  by
+                <p>&copy; 2023 <a href="#">Kutch Car Rentals</a>. All Rights Reserved. | Developed & Designed by
                     <a href="https://programmingjay.netlify.app/" target="_blank"
                         style="color: var(--primary-orange); font-weight: 600;">
                         Programming Jay
@@ -1696,107 +2074,107 @@
             observer.observe(card);
         });
         function formatDate(inputDate) {
-        if (!inputDate) return '';
-        const date = new Date(inputDate);
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
-        const year = date.getFullYear();
-        return `${day}-${month}-${year}`;
-    }
-
-    function submitBooking() {
-        // Get form values
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const email = document.getElementById('email').value;
-        const vehicleType = document.getElementById('vehicleType').value;
-        const pickupDate = document.getElementById('pickupDate').value;
-        const returnDate = document.getElementById('returnDate').value;
-        const pickupLocation = document.getElementById('pickupLocation').value;
-        const dropoffLocation = document.getElementById('dropoffLocation').value;
-        const requirements = document.getElementById('requirements').value;
-
-        // Validate required fields
-        if (!name || !phone || !vehicleType || !pickupDate || !returnDate || !pickupLocation) {
-            alert('Please fill in all required fields');
-            return;
+            if (!inputDate) return '';
+            const date = new Date(inputDate);
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            return `${day}-${month}-${year}`;
         }
 
-        // Format dates as DD-MM-YYYY
-        const formattedPickupDate = formatDate(pickupDate);
-        const formattedReturnDate = formatDate(returnDate);
+        function submitBooking() {
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const vehicleType = document.getElementById('vehicleType').value;
+            const pickupDate = document.getElementById('pickupDate').value;
+            const returnDate = document.getElementById('returnDate').value;
+            const pickupLocation = document.getElementById('pickupLocation').value;
+            const dropoffLocation = document.getElementById('dropoffLocation').value;
+            const requirements = document.getElementById('requirements').value;
 
-        // Create WhatsApp message in the exact format shown in the screenshot
-        let message = `*New Car Booking Request:*\n\n`;
-        message += `*Name:* ${name}\n`;
-        message += `*Phone:* ${phone}\n`;
-        if (email) message += `*Email:* ${email}\n`;
-        message += `*Vehicle Type:* ${vehicleType}\n`;
-        message += `*Pickup Date:* ${formattedPickupDate}\n`;
-        message += `*Return Date:* ${formattedReturnDate}\n`;
-        message += `*Pickup Location:* ${pickupLocation}\n`;
-        if (dropoffLocation && dropoffLocation !== 'Same as Pickup') {
-            message += `*Drop-off Location:* ${dropoffLocation}\n`;
-        }
-        if (requirements) message += `*Special Requirements:* ${requirements}\n`;
+            // Validate required fields
+            if (!name || !phone || !vehicleType || !pickupDate || !returnDate || !pickupLocation) {
+                alert('Please fill in all required fields');
+                return;
+            }
 
-        // Encode message for URL (preserving newlines and formatting)
-        const encodedMessage = encodeURIComponent(message);
-        
-        // WhatsApp number (replace with your actual number)
-        const whatsappNumber = '917674636363'; // Example: +91 98765 43210
-        
-        // Open WhatsApp with pre-filled message
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-        
-        // Optional: Reset form after submission
-        // document.getElementById('whatsappBookingForm').reset();
-    }
-    // Hero Slider Functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.hero-slider-dot');
-        let currentSlide = 0;
-        let slideInterval;
-    
-        function showSlide(index) {
-            // Hide all slides
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            // Show the selected slide
-            slides[index].classList.add('active');
-            dots[index].classList.add('active');
-            currentSlide = index;
+            // Format dates as DD-MM-YYYY
+            const formattedPickupDate = formatDate(pickupDate);
+            const formattedReturnDate = formatDate(returnDate);
+
+            // Create WhatsApp message in the exact format shown in the screenshot
+            let message = `*New Car Booking Request:*\n\n`;
+            message += `*Name:* ${name}\n`;
+            message += `*Phone:* ${phone}\n`;
+            if (email) message += `*Email:* ${email}\n`;
+            message += `*Vehicle Type:* ${vehicleType}\n`;
+            message += `*Pickup Date:* ${formattedPickupDate}\n`;
+            message += `*Return Date:* ${formattedReturnDate}\n`;
+            message += `*Pickup Location:* ${pickupLocation}\n`;
+            if (dropoffLocation && dropoffLocation !== 'Same as Pickup') {
+                message += `*Drop-off Location:* ${dropoffLocation}\n`;
+            }
+            if (requirements) message += `*Special Requirements:* ${requirements}\n`;
+
+            // Encode message for URL (preserving newlines and formatting)
+            const encodedMessage = encodeURIComponent(message);
+
+            // WhatsApp number (replace with your actual number)
+            const whatsappNumber = '+917874636363'; // Example: +91 98765 43210
+
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+
+            // Optional: Reset form after submission
+            // document.getElementById('whatsappBookingForm').reset();
         }
-    
-        function nextSlide() {
-            let nextIndex = (currentSlide + 1) % slides.length;
-            showSlide(nextIndex);
-        }
-    
-        // Auto-rotate slides every 5 seconds
-        function startSlider() {
-            slideInterval = setInterval(nextSlide, 5000);
-        }
-    
-        // Pause slider when hovering
-        const slider = document.querySelector('.hero-slider');
-        slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-        slider.addEventListener('mouseleave', startSlider);
-    
-        // Dot navigation
-        dots.forEach(dot => {
-            dot.addEventListener('click', function() {
-                clearInterval(slideInterval);
-                showSlide(parseInt(this.getAttribute('data-slide')));
-                startSlider();
+        // Hero Slider Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-slider-dot');
+            let currentSlide = 0;
+            let slideInterval;
+
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+
+                // Show the selected slide
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                let nextIndex = (currentSlide + 1) % slides.length;
+                showSlide(nextIndex);
+            }
+
+            // Auto-rotate slides every 5 seconds
+            function startSlider() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            // Pause slider when hovering
+            const slider = document.querySelector('.hero-slider');
+            slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            slider.addEventListener('mouseleave', startSlider);
+
+            // Dot navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', function () {
+                    clearInterval(slideInterval);
+                    showSlide(parseInt(this.getAttribute('data-slide')));
+                    startSlider();
+                });
             });
+
+            // Start the slider
+            startSlider();
         });
-    
-        // Start the slider
-        startSlider();
-    });
     </script>
 </body>
 
