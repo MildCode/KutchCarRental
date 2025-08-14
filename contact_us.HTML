@@ -721,83 +721,85 @@
             display: inline-block;
             float: none;
         }
+
         /* Newsletter Form Styles */
-.newsletter-form {
-    max-width: 100%;
-    margin: 0 auto;
-}
+        .newsletter-form {
+            max-width: 100%;
+            margin: 0 auto;
+        }
 
-.newsletter-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 8px;
-}
+        .newsletter-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 8px;
+        }
 
-.newsletter-input {
-    flex: 1;
-    min-width: 0; /* Prevent flex item overflow */
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
+        .newsletter-input {
+            flex: 1;
+            min-width: 0;
+            /* Prevent flex item overflow */
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
 
-.newsletter-input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
 
-.newsletter-btn {
-    padding: 12px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
+        .newsletter-btn {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
 
-.newsletter-btn:hover {
-    background-color: #0069d9;
-}
+        .newsletter-btn:hover {
+            background-color: #0069d9;
+        }
 
-.newsletter-btn-text {
-    display: inline;
-}
+        .newsletter-btn-text {
+            display: inline;
+        }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .newsletter-container {
-        flex-direction: column;
-    }
-    
-    .newsletter-btn {
-        width: 100%;
-    }
-    
-    .newsletter-btn-text {
-        display: none;
-    }
-}
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .newsletter-container {
+                flex-direction: column;
+            }
 
-/* Small mobile devices */
-@media (max-width: 480px) {
-    .newsletter-input {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-    
-    .newsletter-btn {
-        padding: 10px 15px;
-    }
-}
+            .newsletter-btn {
+                width: 100%;
+            }
+
+            .newsletter-btn-text {
+                display: none;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .newsletter-input {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
+            .newsletter-btn {
+                padding: 10px 15px;
+            }
+        }
     </style>
 </head>
 
@@ -809,30 +811,33 @@
                 <img src="/kutch car rental/assets/css/image/logo_new.png" alt="Logo"
                     style="height: 50px; vertical-align: middle; margin-right: 10px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="fleet.html">Our Fleet</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/service.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about.us.html">About Us</a>
-                    </li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-nav" href="https://api.whatsapp.com/send?phone=7874636363&text=Hi%2C%20I%20got%20connected%20with%20you%20from%20your%20website"target="_blank">Book Now</a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="fleet.html">Our Fleet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/service.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about.us.html">About Us</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="btn btn-nav"
+                                href="https://api.whatsapp.com/send?phone=7874636363&text=Hi%2C%20I%20got%20connected%20with%20you%20from%20your%20website"
+                                target="_blank">Book Now</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -1077,15 +1082,15 @@
 
                         <h4 class="footer-title mt-4">Newsletter</h4>
                         <h4 class="footer-title mt-4">Newsletter</h4>
-<form class="newsletter-form">
-    <div class="newsletter-container">
-        <input type="email" class="newsletter-input" placeholder="Your Email" required>
-        <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
-            <i class="fas fa-paper-plane"></i>
-            <span class="newsletter-btn-text">Subscribe</span>
-        </button>
-    </div>
-</form>
+                        <form class="newsletter-form">
+                            <div class="newsletter-container">
+                                <input type="email" class="newsletter-input" placeholder="Your Email" required>
+                                <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span class="newsletter-btn-text">Subscribe</span>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

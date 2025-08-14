@@ -10,7 +10,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
     <style>
         /* Reuse all the same CSS variables and base styles from your existing design */
         :root {
@@ -38,7 +40,12 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
         }
@@ -724,6 +731,7 @@
                 font-size: 1.8rem;
             }
         }
+
         @media (max-width: 768px) {
             .services-hero .hero-title {
                 font-size: 2rem;
@@ -782,271 +790,280 @@
             }
         }
 
-    /* Mobile Responsive Styles */
-    @media (max-width: 768px) {
-        /* Navigation */
-        .navbar {
-            padding: 15px 0;
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+
+            /* Navigation */
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .navbar-brand img {
+                height: 40px;
+            }
+
+            /* Hero Section */
+            .services-hero {
+                height: auto;
+                min-height: auto;
+                padding: 120px 0 60px;
+                text-align: left;
+            }
+
+            .services-hero .hero-container {
+                padding: 0 15px;
+            }
+
+            .services-hero .hero-title {
+                font-size: 2rem;
+                margin-bottom: 15px;
+                text-align: left;
+                line-height: 1.3;
+            }
+
+            .breadcrumb {
+                justify-content: flex-start;
+            }
+
+            /* Services Section */
+            .services-section {
+                padding: 60px 0;
+            }
+
+            .services-section:before,
+            .services-section:after {
+                display: none;
+            }
+
+            .section-title {
+                text-align: left;
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+                display: block;
+            }
+
+            .section-title h2:after {
+                left: 0;
+                transform: translateX(0);
+            }
+
+            .section-title p {
+                text-align: left;
+                font-size: 1rem;
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+
+            /* Vehicle Types */
+            .vehicle-types {
+                padding: 60px 0;
+            }
+
+            .vehicle-card {
+                margin-bottom: 20px;
+            }
+
+            /* Why Choose Us */
+            .why-choose {
+                padding: 60px 0;
+            }
+
+            .feature-box {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            /* CTA Section */
+            .cta-section {
+                padding: 60px 0;
+            }
+
+            .cta-title {
+                font-size: 1.8rem;
+            }
+
+            .cta-text {
+                font-size: 1rem;
+            }
+
+            .btn-cta {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 60px 0 30px;
+            }
+
+            .footer-logo {
+                font-size: 1.5rem;
+            }
+
+            .footer-title {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+
+            .footer-links li {
+                margin-bottom: 8px;
+            }
+
+            .footer-contact p {
+                font-size: 0.9rem;
+            }
+
+            .footer-bottom {
+                margin-top: 30px;
+                padding-top: 20px;
+            }
+
+            /* Adjust grid columns for mobile */
+            .row {
+                --bs-gutter-x: 1.5rem;
+            }
+
+            .col-md-6,
+            .col-lg-4,
+            .col-lg-3 {
+                padding-right: calc(var(--bs-gutter-x) * .5);
+                padding-left: calc(var(--bs-gutter-x) * .5);
+                margin-bottom: 20px;
+            }
         }
-        
-        .navbar-brand img {
-            height: 40px;
+
+        @media (max-width: 576px) {
+
+            /* Further adjustments for very small screens */
+            .services-hero {
+                padding: 100px 0 40px;
+            }
+
+            .services-hero .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+
+            .feature-box h4 {
+                font-size: 1.2rem;
+            }
+
+            /* Stack all columns on very small screens */
+            .col-md-6,
+            .col-lg-4,
+            .col-lg-3,
+            .col-lg-2 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            /* Adjust footer layout */
+            .footer .row>div {
+                margin-bottom: 30px;
+            }
         }
-        
-        /* Hero Section */
-        .services-hero {
-            height: auto;
-            min-height: auto;
-            padding: 120px 0 60px;
-            text-align: left;
-        }
-        
-        .services-hero .hero-container {
-            padding: 0 15px;
-        }
-        
-        .services-hero .hero-title {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            text-align: left;
-            line-height: 1.3;
-        }
-        
-        .breadcrumb {
-            justify-content: flex-start;
-        }
-        
-        /* Services Section */
-        .services-section {
-            padding: 60px 0;
-        }
-        
-        .services-section:before,
-        .services-section:after {
-            display: none;
-        }
-        
-        .section-title {
-            text-align: left;
-            margin-bottom: 40px;
-        }
-        
-        .section-title h2 {
-            font-size: 1.8rem;
-            display: block;
-        }
-        
-        .section-title h2:after {
-            left: 0;
-            transform: translateX(0);
-        }
-        
-        .section-title p {
-            text-align: left;
-            font-size: 1rem;
+
+        /* Newsletter Form Styles */
+        .newsletter-form {
             max-width: 100%;
-            margin-left: 0;
-            margin-right: 0;
+            margin: 0 auto;
         }
-        
-        .service-card {
-            padding: 20px;
-        }
-        
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            font-size: 1.8rem;
-        }
-        
-        /* Vehicle Types */
-        .vehicle-types {
-            padding: 60px 0;
-        }
-        
-        .vehicle-card {
-            margin-bottom: 20px;
-        }
-        
-        /* Why Choose Us */
-        .why-choose {
-            padding: 60px 0;
-        }
-        
-        .feature-box {
-            padding: 20px 15px;
-            margin-bottom: 20px;
-        }
-        
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 60px 0;
-        }
-        
-        .cta-title {
-            font-size: 1.8rem;
-        }
-        
-        .cta-text {
-            font-size: 1rem;
-        }
-        
-        .btn-cta {
-            padding: 10px 20px;
-            font-size: 1rem;
-        }
-        
-        /* Footer */
-        .footer {
-            padding: 60px 0 30px;
-        }
-        
-        .footer-logo {
-            font-size: 1.5rem;
-        }
-        
-        .footer-title {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links li {
-            margin-bottom: 8px;
-        }
-        
-        .footer-contact p {
-            font-size: 0.9rem;
-        }
-        
-        .footer-bottom {
-            margin-top: 30px;
-            padding-top: 20px;
-        }
-        
-        /* Adjust grid columns for mobile */
-        .row {
-            --bs-gutter-x: 1.5rem;
-        }
-        
-        .col-md-6, .col-lg-4, .col-lg-3 {
-            padding-right: calc(var(--bs-gutter-x) * .5);
-            padding-left: calc(var(--bs-gutter-x) * .5);
-            margin-bottom: 20px;
-        }
-    }
 
-    @media (max-width: 576px) {
-        /* Further adjustments for very small screens */
-        .services-hero {
-            padding: 100px 0 40px;
+        .newsletter-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 8px;
         }
-        
-        .services-hero .hero-title {
-            font-size: 1.8rem;
+
+        .newsletter-input {
+            flex: 1;
+            min-width: 0;
+            /* Prevent flex item overflow */
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s ease;
         }
-        
-        .section-title h2 {
-            font-size: 1.6rem;
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
         }
-        
-        .feature-box h4 {
-            font-size: 1.2rem;
+
+        .newsletter-btn {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
-        
-        /* Stack all columns on very small screens */
-        .col-md-6, .col-lg-4, .col-lg-3, .col-lg-2 {
-            flex: 0 0 100%;
-            max-width: 100%;
+
+        .newsletter-btn:hover {
+            background-color: #0069d9;
         }
-        
-        /* Adjust footer layout */
-        .footer .row > div {
-            margin-bottom: 30px;
+
+        .newsletter-btn-text {
+            display: inline;
         }
-    }
-    /* Newsletter Form Styles */
-.newsletter-form {
-    max-width: 100%;
-    margin: 0 auto;
-}
 
-.newsletter-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 8px;
-}
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .newsletter-container {
+                flex-direction: column;
+            }
 
-.newsletter-input {
-    flex: 1;
-    min-width: 0; /* Prevent flex item overflow */
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
+            .newsletter-btn {
+                width: 100%;
+            }
 
-.newsletter-input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
+            .newsletter-btn-text {
+                display: none;
+            }
+        }
 
-.newsletter-btn {
-    padding: 12px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            .newsletter-input {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
 
-.newsletter-btn:hover {
-    background-color: #0069d9;
-}
-
-.newsletter-btn-text {
-    display: inline;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .newsletter-container {
-        flex-direction: column;
-    }
-    
-    .newsletter-btn {
-        width: 100%;
-    }
-    
-    .newsletter-btn-text {
-        display: none;
-    }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-    .newsletter-input {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-    
-    .newsletter-btn {
-        padding: 10px 15px;
-    }
-}
+            .newsletter-btn {
+                padding: 10px 15px;
+            }
+        }
     </style>
 </head>
 
@@ -1058,34 +1075,37 @@
                 <img src="/kutch car rental/assets/css/image/logo_new.png" alt="Logo"
                     style="height: 50px; vertical-align: middle; margin-right: 10px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="fleet.html">Our Fleet</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about.us.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact_us.HTML">Contact</a>
-                    </li>
-                    <li class="nav-item ms-lg-3">
-                        <a class="btn btn-nav" href="https://api.whatsapp.com/send?phone=7874636363&text=Hi%2C%20I%20got%20connected%20with%20you%20from%20your%20website"target="_blank">Book Now</a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="fleet.html">Our Fleet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about.us.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact_us.HTML">Contact</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="btn btn-nav"
+                                href="https://api.whatsapp.com/send?phone=7874636363&text=Hi%2C%20I%20got%20connected%20with%20you%20from%20your%20website"
+                                target="_blank">Book Now</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="services-hero">
+    <section class="about-hero">
         <div class="hero-overlay"></div>
         <div class="container hero-container">
             <div class="row">
@@ -1107,7 +1127,8 @@
         <div class="container">
             <div class="section-title">
                 <h2>Comprehensive Car Rental Solutions</h2>
-                <p>Discover our wide range of premium services tailored to meet all your transportation needs in Kutch</p>
+                <p>Discover our wide range of premium services tailored to meet all your transportation needs in Kutch
+                </p>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -1116,8 +1137,10 @@
                             <i class="fas fa-car-alt"></i>
                         </div>
                         <h3>Self-Drive Rentals</h3>
-                        <p>Enjoy the freedom of exploring Kutch at your own pace with our well-maintained fleet of self-drive cars available for hourly, daily, weekly, and monthly rentals.</p>
-                        <a href="#self-drive" class="service-link">Explore options <i class="fas fa-arrow-right"></i></a>
+                        <p>Enjoy the freedom of exploring Kutch at your own pace with our well-maintained fleet of
+                            self-drive cars available for hourly, daily, weekly, and monthly rentals.</p>
+                        <a href="#self-drive" class="service-link">Explore options <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -1126,7 +1149,8 @@
                             <i class="fas fa-user-tie"></i>
                         </div>
                         <h3>Chauffeur Services</h3>
-                        <p>Relax and let our professional drivers take you around Kutch in comfort and style. Perfect for business travelers and tourists alike.</p>
+                        <p>Relax and let our professional drivers take you around Kutch in comfort and style. Perfect
+                            for business travelers and tourists alike.</p>
                         <a href="#chauffeur" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1136,7 +1160,8 @@
                             <i class="fas fa-plane"></i>
                         </div>
                         <h3>Airport Transfers</h3>
-                        <p>Hassle-free airport pickups and drop-offs to/from Bhuj Airport with flight tracking and meet & greet service available.</p>
+                        <p>Hassle-free airport pickups and drop-offs to/from Bhuj Airport with flight tracking and meet
+                            & greet service available.</p>
                         <a href="#airport" class="service-link">View details <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1146,8 +1171,10 @@
                             <i class="fas fa-briefcase"></i>
                         </div>
                         <h3>Corporate Rentals</h3>
-                        <p>Special packages for businesses with monthly billing, multiple vehicle discounts, and priority support for your corporate transportation needs.</p>
-                        <a href="#corporate" class="service-link">Business solutions <i class="fas fa-arrow-right"></i></a>
+                        <p>Special packages for businesses with monthly billing, multiple vehicle discounts, and
+                            priority support for your corporate transportation needs.</p>
+                        <a href="#corporate" class="service-link">Business solutions <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -1156,7 +1183,8 @@
                             <i class="fas fa-route"></i>
                         </div>
                         <h3>Outstation Trips</h3>
-                        <p>Explore beyond Kutch with our reliable vehicles and unlimited kilometer packages for memorable road trips across Gujarat.</p>
+                        <p>Explore beyond Kutch with our reliable vehicles and unlimited kilometer packages for
+                            memorable road trips across Gujarat.</p>
                         <a href="#outstation" class="service-link">Plan your trip <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1166,7 +1194,8 @@
                             <i class="fas fa-calendar-alt"></i>
                         </div>
                         <h3>Long Term Leasing</h3>
-                        <p>Flexible long-term rental solutions with comprehensive maintenance packages for extended stays in Kutch.</p>
+                        <p>Flexible long-term rental solutions with comprehensive maintenance packages for extended
+                            stays in Kutch.</p>
                         <a href="#leasing" class="service-link">Get a quote <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1371,7 +1400,8 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="cta-title">Ready to Explore Kutch?</h2>
-                    <p class="cta-text">Book your perfect vehicle today and experience the best car rental service in the region with unmatched convenience and reliability.</p>
+                    <p class="cta-text">Book your perfect vehicle today and experience the best car rental service in
+                        the region with unmatched convenience and reliability.</p>
                     <a href="/contact_us.HTML" class="btn btn-cta">Contact Us Now</a>
                 </div>
             </div>
@@ -1391,8 +1421,10 @@
                         <p>Providing premium car rental services in Kutch since 2010. We pride ourselves on exceptional
                             customer service and a well-maintained fleet of vehicles.</p>
                         <div class="social-icons">
-                            <a href="https://www.facebook.com/profile.php?id=61578690844776" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/kutch_car_rental/?utm_source=ig_web_button_share_sheet&igsh=emc2am45MmhnYnBk#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=61578690844776" class="social-icon"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/kutch_car_rental/?utm_source=ig_web_button_share_sheet&igsh=emc2am45MmhnYnBk#"
+                                class="social-icon"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1413,11 +1445,16 @@
                     <div class="footer-links">
                         <h4 class="footer-title">Our Services</h4>
                         <ul class="footer-links">
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Self Drive Rentals</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Chauffeur Services</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Airport Transfers</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Corporate Rentals</a></li>
-                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Long Term Leasing</a></li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Self Drive Rentals</a>
+                            </li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Chauffeur Services</a>
+                            </li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Airport Transfers</a>
+                            </li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Corporate Rentals</a>
+                            </li>
+                            <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Long Term Leasing</a>
+                            </li>
                             <li><a href="/contact_us.HTML"><i class="fas fa-chevron-right"></i> Wedding Cars</a></li>
                         </ul>
                     </div>
@@ -1425,27 +1462,32 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-contact">
                         <h4 class="footer-title">Contact Us</h4>
-                        <a href="https://maps.app.goo.gl/ZFfHBzbPy4NzFNHd9" style="color: inherit; text-decoration: none;"><i class="fas fa-map-marker-alt"></i> Site B, Katira Commercial, Office Relocation Site, B/129, RTO Ring Rd, RTO Relocation Site, Bhuj, Gujarat 370001</a><br>
-                        <a href="tel:+917874636363" style="color: inherit; text-decoration: none;"><i class="fas fa-phone-alt"></i> +91 98765 43210</a><br>
-                        <a href="mailto:info@kutchcarrental.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i> info@kutchrentals.com</a><br>
+                        <a href="https://maps.app.goo.gl/ZFfHBzbPy4NzFNHd9"
+                            style="color: inherit; text-decoration: none;"><i class="fas fa-map-marker-alt"></i> Site B,
+                            Katira Commercial, Office Relocation Site, B/129, RTO Ring Rd, RTO Relocation Site, Bhuj,
+                            Gujarat 370001</a><br>
+                        <a href="tel:+917874636363" style="color: inherit; text-decoration: none;"><i
+                                class="fas fa-phone-alt"></i> +91 98765 43210</a><br>
+                        <a href="mailto:info@kutchcarrental.com" style="color: inherit; text-decoration: none;"><i
+                                class="fas fa-envelope"></i> info@kutchrentals.com</a><br>
                         <p><i class="fas fa-clock"></i> Mon-Sun: 8:00 AM - 10:00 PM</p>
 
                         <h4 class="footer-title mt-4">Newsletter</h4>
                         <h4 class="footer-title mt-4">Newsletter</h4>
-<form class="newsletter-form">
-    <div class="newsletter-container">
-        <input type="email" class="newsletter-input" placeholder="Your Email" required>
-        <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
-            <i class="fas fa-paper-plane"></i>
-            <span class="newsletter-btn-text">Subscribe</span>
-        </button>
-    </div>
-</form>
+                        <form class="newsletter-form">
+                            <div class="newsletter-container">
+                                <input type="email" class="newsletter-input" placeholder="Your Email" required>
+                                <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span class="newsletter-btn-text">Subscribe</span>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 <a href="#">Kutch Car Rentals</a>. All Rights Reserved. | Developed & Designed  by
+                <p>&copy; 2023 <a href="#">Kutch Car Rentals</a>. All Rights Reserved. | Developed & Designed by
                     <a href="https://programmingjay.netlify.app/" target="_blank"
                         style="color: var(--primary-orange); font-weight: 600;">
                         Programming Jay
