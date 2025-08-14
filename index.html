@@ -999,6 +999,83 @@ Here's the complete code with top SEO optimizations implemented:
         .newsletter-btn:hover {
             opacity: 0.9;
         }
+        /* Newsletter Form Styles */
+.newsletter-form {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.newsletter-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+}
+
+.newsletter-input {
+    flex: 1;
+    min-width: 0; /* Prevent flex item overflow */
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.newsletter-btn {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.newsletter-btn:hover {
+    background-color: #0069d9;
+}
+
+.newsletter-btn-text {
+    display: inline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .newsletter-container {
+        flex-direction: column;
+    }
+    
+    .newsletter-btn {
+        width: 100%;
+    }
+    
+    .newsletter-btn-text {
+        display: none;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .newsletter-input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .newsletter-btn {
+        padding: 10px 15px;
+    }
+}
 
         /* Animations */
         @keyframes fadeInUp {
@@ -1455,7 +1532,7 @@ Here's the complete code with top SEO optimizations implemented:
                     </div>
                     <div class="hero-image">
                         <div class="hero-badge">Special Offers!</div>
-                        <img src="/kutch car rental/assets/css/image/audi-q7.png"
+                        <img src="/kutch car rental/assets/css/image/tempo-12seat-removebg-preview.png"
                             alt="Luxury car for weddings and special occasions in Kutch" width="600" height="400"
                             loading="eager">
                     </div>
@@ -1465,13 +1542,8 @@ Here's the complete code with top SEO optimizations implemented:
 
         <!-- Slide 3 -->
         <div class="hero-slide">
-<<<<<<< HEAD
-            <img src="/kutch car rental/assets/css/image/hero3.png" alt="Kutch background"
-                class="hero-background" loading="eager">
-=======
             <img src="/kutch car rental/assets/css/image/hero1.jpg" alt="Kutch background"
                 style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:-1;">
->>>>>>> 04f3c62bbd3263bb244393bb024a91be6f3e3310
             <div class="hero-overlay"></div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -1700,8 +1772,6 @@ Here's the complete code with top SEO optimizations implemented:
                             as described. The pickup and drop-off process was seamless. Will definitely use Kutch
                             Rentals again for my next trip."</p>
                         <div class="testimonial-author">
-                            <img src="/customer-rajesh.jpg" alt="Rajesh Patel testimonial" width="60" height="60"
-                                loading="lazy">
                             <div class="author-info">
                                 <h5>Rajesh Patel</h5>
                                 <p>Business Traveler</p>
@@ -1722,8 +1792,6 @@ Here's the complete code with top SEO optimizations implemented:
                             Spacious, comfortable and great for long drives. The staff was very helpful with all our
                             queries. Highly recommended!"</p>
                         <div class="testimonial-author">
-                            <img src="/customer-priya.jpg" alt="Priya Sharma testimonial" width="60" height="60"
-                                loading="lazy">
                             <div class="author-info">
                                 <h5>Priya Sharma</h5>
                                 <p>Family Vacation</p>
@@ -1744,8 +1812,6 @@ Here's the complete code with top SEO optimizations implemented:
                             Rentals stands out for their professionalism and quality vehicles. Their pricing is
                             transparent with no hidden charges."</p>
                         <div class="testimonial-author">
-                            <img src="/customer-amit.jpg" alt="Amit Desai testimonial" width="60" height="60"
-                                loading="lazy">
                             <div class="author-info">
                                 <h5>Amit Desai</h5>
                                 <p>Corporate Client</p>
@@ -2008,10 +2074,15 @@ Here's the complete code with top SEO optimizations implemented:
                         <p><i class="fas fa-clock"></i> Mon-Sun: 8:00 AM - 10:00 PM</p>
 
                         <h4 class="footer-title mt-4">Newsletter</h4>
-                        <!-- <form class="newsletter-form">
-                            <input type="email" class="newsletter-input" placeholder="Your Email">
-                            <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-                        </form> -->
+                        <form class="newsletter-form">
+                            <div class="newsletter-container">
+                                <input type="email" class="newsletter-input" placeholder="Your Email" required>
+                                <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span class="newsletter-btn-text">Subscribe</span>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

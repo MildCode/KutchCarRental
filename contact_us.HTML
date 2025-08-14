@@ -721,6 +721,83 @@
             display: inline-block;
             float: none;
         }
+        /* Newsletter Form Styles */
+.newsletter-form {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.newsletter-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+}
+
+.newsletter-input {
+    flex: 1;
+    min-width: 0; /* Prevent flex item overflow */
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.newsletter-btn {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.newsletter-btn:hover {
+    background-color: #0069d9;
+}
+
+.newsletter-btn-text {
+    display: inline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .newsletter-container {
+        flex-direction: column;
+    }
+    
+    .newsletter-btn {
+        width: 100%;
+    }
+    
+    .newsletter-btn-text {
+        display: none;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .newsletter-input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .newsletter-btn {
+        padding: 10px 15px;
+    }
+}
     </style>
 </head>
 
@@ -999,10 +1076,16 @@
                         <p><i class="fas fa-clock"></i> Mon-Sun: 8:00 AM - 10:00 PM</p>
 
                         <h4 class="footer-title mt-4">Newsletter</h4>
-                        <form class="newsletter-form">
-                            <input type="email" class="newsletter-input" placeholder="Your Email">
-                            <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
-                        </form>
+                        <h4 class="footer-title mt-4">Newsletter</h4>
+<form class="newsletter-form">
+    <div class="newsletter-container">
+        <input type="email" class="newsletter-input" placeholder="Your Email" required>
+        <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+            <i class="fas fa-paper-plane"></i>
+            <span class="newsletter-btn-text">Subscribe</span>
+        </button>
+    </div>
+</form>
                     </div>
                 </div>
             </div>
