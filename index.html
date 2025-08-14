@@ -250,6 +250,7 @@ Here's the complete code with top SEO optimizations implemented:
         .hero-text {
             flex: 1;
             padding-right: 40px;
+            color:#F1F5F9;
             animation: fadeInUp 1s ease-out;
         }
 
@@ -1224,26 +1225,6 @@ Here's the complete code with top SEO optimizations implemented:
             overflow: hidden;
         }
 
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            z-index: 0;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
-            z-index: 1;
-        }
-
         .hero-slide .hero-overlay {
             background: rgba(0, 0, 0, 0.4);
         }
@@ -1320,6 +1301,36 @@ Here's the complete code with top SEO optimizations implemented:
         link[rel="preload"] {
             display: none;
         }
+        
+        .hero-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 0;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
     </style>
     <!-- Preload critical resources -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
@@ -1381,8 +1392,9 @@ Here's the complete code with top SEO optimizations implemented:
     <!-- Hero Section -->
     <section class="hero-slider" id="home">
         <!-- Slide 1 -->
-        <div class="hero-slide active"
-            style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);">
+        <div class="hero-slide active">
+            <img src="/kutch car rental/assets/css/image/hero1.jpg" alt="Kutch background"
+                class="hero-background" loading="eager">
             <div class="hero-overlay"></div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -1408,17 +1420,17 @@ Here's the complete code with top SEO optimizations implemented:
                     </div>
                     <div class="hero-image">
                         <div class="hero-badge">Best Rates Guaranteed!</div>
-                        <img src="/kutch car rental/assets/css/image/car-crysta.jpg" alt="Hyundai Creta available for rent in Kutch" width="600"
-                            height="400" loading="lazy">
+                        <img src="/kutch car rental/assets/css/image/car-crysta-removebg-preview.png" alt="Hyundai Creta available for rent in Kutch" width="600"
+                            height="400" loading="eager">
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Slide 2 -->
-       <div class="hero-slide">
+        <div class="hero-slide">
             <img src="/kutch car rental/assets/css/image/hero2.png" alt="Kutch background"
-                style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:-1;">
+                class="hero-background" loading="eager">
             <div class="hero-overlay"></div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -1445,15 +1457,16 @@ Here's the complete code with top SEO optimizations implemented:
                         <div class="hero-badge">Special Offers!</div>
                         <img src="/kutch car rental/assets/css/image/audi-q7.png"
                             alt="Luxury car for weddings and special occasions in Kutch" width="600" height="400"
-                            loading="lazy">
+                            loading="eager">
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 3 --> 
-        <div class="hero-slide" 
-            style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-orange) 100%);">
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+            <img src="/kutch car rental/assets/css/image/hero3.png" alt="Kutch background"
+                class="hero-background" loading="eager">
             <div class="hero-overlay"></div>
             <div class="hero-container">
                 <div class="hero-content">
@@ -1478,13 +1491,11 @@ Here's the complete code with top SEO optimizations implemented:
                     </div>
                     <div class="hero-image">
                         <div class="hero-badge">Explore More!</div>
-                        <img src="/kutch-tour-car-rental.jpg" alt="Car rental for exploring Kutch tourist places"
-                            width="600" height="400" loading="lazy">
+                        <img src="/kutch car rental/assets/css/image/85530460-removebg-preview.png" alt="Car rental for exploring Kutch tourist places"
+                            width="600" height="400" loading="eager">
                     </div>
                 </div>
             </div>
-        </div>
-
         </div>
 
         <!-- Slider Navigation Dots -->
